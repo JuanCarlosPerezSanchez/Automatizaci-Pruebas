@@ -48,7 +48,7 @@ public class Widgets {
   @Test(description = "Widgets_TC04 - Acceder a la pantalla de widgets", enabled = false)
   public void Widgets_TC04() throws InterruptedException {
     Widgets_TC01();
-    Utils.chromeDriver.findElementByXPath("//div[contains(@class,'card mt-4 top-card')][.//h5[contains(text(),'Elements')]]").click();
+    Utils.chromeDriver.findElementByXPath("//span[@class='text' and text()='Accordian']").click();
     if(Utils.chromeDriver.findElementsByXPath("//li//span[text()='Text Box']").size() == 0 ||
       Utils.chromeDriver.findElementsByXPath("//li//span[text()='Upload and Download']").size() == 0 ||
       Utils.chromeDriver.findElementsByXPath("//li//span[text()='Dynamic Properties']").size() == 0){
