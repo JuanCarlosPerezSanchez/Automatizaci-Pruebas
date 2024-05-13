@@ -11,6 +11,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
+import org.testng.annotations.AfterSuite;
+
 
 public class Widgets {
 
@@ -66,24 +68,34 @@ public class Widgets {
     if(Utils.chromeDriver.findElementsByXPath("//input[@id='datePickerMonthYearInput' and @class='react-datepicker-ignore-onclickoutside']").size() == 0 ||
       Utils.chromeDriver.findElementsByXPath("//input[@id='dateAndTimePickerInput' and @class='react-datepicker-ignore-onclickoutside']").size() == 0 ||
       Utils.chromeDriver.findElementsByXPath("//*[@id=\"datePickerContainer\"]/h1").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("?????????????????????????????????????????").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("//span[contains(text(),'Date Picker')]/parent::li").getAttribute("class").contains("active"))
-    {
-    System.out.println("Esta prueba ha fallado!!");
+      Utils.chromeDriver.findElementsByXPath("Macro blanco?????????????????????").size() == 0 ||
+      Utils.chromeDriver.findElementsByXPath("//span[contains(text(),'Date Picker')]/parent::li").contains("active"))
+      {
+        System.out.println("Esta prueba ha fallado!!");
+      }
 
-    //Paso 2
+      //Paso 2
     
     //Acción
     Utils.chromeDriver.findElementByXPath("//input[@id='datePickerMonthYearInput' and @class='react-datepicker-ignore-onclickoutside']").click();
+    
+    // Thread.sleep(5000);
+    
+    //Condición
+    if(Utils.chromeDriver.findElementsByXPath("//*[@id='datePickerMonthYear']/div[2]/div[2]").size() == 0)
+    {
+      System.out.println("Esta prueba ha fallado!!");
+    }
+
+    //Acción
     Utils.chromeDriver.findElementByXPath("//input[@id='dateAndTimePickerInput' and @class='react-datepicker-ignore-onclickoutside']").click();
     // Thread.sleep(5000);
-
+    
     //Condición
-    if(Utils.chromeDriver.findElementsByXPath("??????????????????????????????????").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("??????????????????????????????????").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("??????????????????????????????????").size() == 0)
+    if(Utils.chromeDriver.findElementsByXPath("//*[@id=\"dateAndTimePicker\"]/div[2]/div[2]/div/div/div[2]").size() == 0 ||
+    Utils.chromeDriver.findElementsByXPath("//*[@id=\"dateAndTimePicker\"]/div[2]/div[2]/div/div/div[3]").size() == 0)
     {
-    System.out.println("Esta prueba ha fallado!!");
+      System.out.println("Esta prueba ha fallado!!");
     }
   }
 
@@ -103,17 +115,18 @@ public class Widgets {
     //Paso 1
     
     //Acción
-    Utils.chromeDriver.findElementByXPath("//li[@id='item-3' and contains(@class, 'active') and contains(span[@class='text'], 'Slider')]").click();
+    Utils.chromeDriver.findElementByXPath("//li[@class='btn btn-light active' and @id='item-3']").click();
     // Thread.sleep(5000);
 
     //Condición
-    if(Utils.chromeDriver.findElementsByXPath("//*[@id=\"sliderContainer\"]").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() == 0)
+    if(Utils.chromeDriver.findElementsByXPath("//*[@id='sliderContainer']/div[1]/span").size() == 0 ||
+      Utils.chromeDriver.findElementsByXPath("//*[@id='sliderValue']").size() == 0 ||
+      Utils.chromeDriver.findElementsByXPath("//*[@id=\"app\"]/div/div/div/div[2]/form/h1").size() == 0 ||
+      Utils.chromeDriver.findElementsByXPath("Macro blanco?????????????????????").size() == 0 ||
+      Utils.chromeDriver.findElementsByXPath("//li[@class='btn btn-light active' and @id='item-3']").contains("active"))
     {
     System.out.println("Esta prueba ha fallado!!");
+    }
 
     //Paso 2
     
