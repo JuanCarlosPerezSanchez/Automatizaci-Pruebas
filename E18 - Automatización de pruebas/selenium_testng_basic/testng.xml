@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="Tools QA">
-    <test verbose="2" preserve-order="true" name="Elements">
+<suite name="Widgets">
+    <test verbose="2" preserve-order="true" name="Widgets">
         <classes>
-            <class name="Pages.Elements" />
+            <class name="Pages.Widgets" />
         </classes>
     </test>
 </suite>

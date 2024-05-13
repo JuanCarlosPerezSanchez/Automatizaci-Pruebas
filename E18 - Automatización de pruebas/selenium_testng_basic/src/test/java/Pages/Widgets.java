@@ -53,28 +53,30 @@ public class Widgets {
    * Verificar el funcionamiento de "Date Picker"
    * @throws InterruptedException 
    */
-  @Test(description = "Widgets_TC04 - Verificar el funcionamiento de \"Date Picker", enabled = false)
+  @Test(description = "Widgets_TC04 - Verificar el funcionamiento de \"Date Picker", enabled = true)
   public void Widgets_TC04() throws InterruptedException {
 
-    Widgets_TC01();
+    // Widgets_TC01();
 
     //Paso 1
     
     //Acción
-    Utils.chromeDriver.findElementByXPath("//li[contains(@class, 'active') and contains(@id, 'item-2') and contains(span[@class='text'], 'Date Picker')]").click();
-    // Thread.sleep(5000);
+    Utils.chromeDriver.get("https://demoqa.com/");
+    Utils.chromeDriver.findElementByXPath("//*[@id='app']/div/div/div[2]/div/div[4]").click();
+    Utils.chromeDriver.findElementByXPath("//li[contains(@class, 'btn btn-light') and @id='item-2' and span[text()='Date Picker']]").click();
+    Thread.sleep(5000);
 
     //Condición
     if(Utils.chromeDriver.findElementsByXPath("//input[@id='datePickerMonthYearInput' and @class='react-datepicker-ignore-onclickoutside']").size() == 0 ||
       Utils.chromeDriver.findElementsByXPath("//input[@id='dateAndTimePickerInput' and @class='react-datepicker-ignore-onclickoutside']").size() == 0 ||
       Utils.chromeDriver.findElementsByXPath("//*[@id=\"datePickerContainer\"]/h1").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("Macro blanco?????????????????????").size() == 0 ||
+      // Utils.chromeDriver.findElementsByXPath("Macro blanco?????????????????????").size() == 0 ||
       Utils.chromeDriver.findElementsByXPath("//span[contains(text(),'Date Picker')]/parent::li").contains("active"))
       {
         System.out.println("Esta prueba ha fallado!!");
       }
 
-      //Paso 2
+    //Paso 2
     
     //Acción
     Utils.chromeDriver.findElementByXPath("//input[@id='datePickerMonthYearInput' and @class='react-datepicker-ignore-onclickoutside']").click();
@@ -115,13 +117,14 @@ public class Widgets {
     //Paso 1
     
     //Acción
+    Utils.chromeDriver.get("https://demoqa.com/");
     Utils.chromeDriver.findElementByXPath("//li[@class='btn btn-light active' and @id='item-3']").click();
     // Thread.sleep(5000);
 
     //Condición
     if(Utils.chromeDriver.findElementsByXPath("//*[@id='sliderContainer']/div[1]/span").size() == 0 ||
       Utils.chromeDriver.findElementsByXPath("//*[@id='sliderValue']").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("//*[@id=\"app\"]/div/div/div/div[2]/form/h1").size() == 0 ||
+      Utils.chromeDriver.findElementsByXPath("//*[@id='app']/div/div/div/div[2]/form/h1").size() == 0 ||
       Utils.chromeDriver.findElementsByXPath("Macro blanco?????????????????????").size() == 0 ||
       Utils.chromeDriver.findElementsByXPath("//li[@class='btn btn-light active' and @id='item-3']").contains("active"))
     {
@@ -131,14 +134,11 @@ public class Widgets {
     //Paso 2
     
     //Acción
-    Utils.chromeDriver.findElementByXPath("").click();
+    Utils.chromeDriver.findElementByXPath("//*[@id='sliderContainer']/div[1]/span/input").click();
     // Thread.sleep(5000);
 
     //Condición
     if(Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
       Utils.chromeDriver.findElementsByXPath("").size() == 0)
     {
     System.out.println("Esta prueba ha fallado!!");
@@ -161,6 +161,7 @@ public class Widgets {
     //Paso 1
     
     //Acción
+    Utils.chromeDriver.get("https://demoqa.com/");
     Utils.chromeDriver.findElementByXPath("").click();
     // Thread.sleep(5000);
 
@@ -173,6 +174,7 @@ public class Widgets {
       Utils.chromeDriver.findElementsByXPath("").size() == 0)
     {
     System.out.println("Esta prueba ha fallado!!");
+    }
 
     //Paso 2
     
@@ -217,6 +219,7 @@ public class Widgets {
     //Paso 1
     
     //Acción
+    Utils.chromeDriver.get("https://demoqa.com/");
     Utils.chromeDriver.findElementByXPath("").click();
     // Thread.sleep(5000);
 
@@ -231,6 +234,7 @@ public class Widgets {
       Utils.chromeDriver.findElementsByXPath("").size() == 0)
     {
     System.out.println("Esta prueba ha fallado!!");
+    }
 
     //Paso 2
     
@@ -261,6 +265,7 @@ public class Widgets {
     //Paso 1
 
     //Acción
+    Utils.chromeDriver.get("https://demoqa.com/");
     Utils.chromeDriver.findElementByXPath("").click();
     // Thread.sleep(5000);
 
@@ -274,6 +279,7 @@ public class Widgets {
       Utils.chromeDriver.findElementsByXPath("").size() == 0)
     {
     System.out.println("Esta prueba ha fallado!!");
+    }
 
     //Paso 2
     
@@ -307,6 +313,7 @@ public class Widgets {
     //Paso 1
     
     //Acción
+    Utils.chromeDriver.get("https://demoqa.com/");
     Utils.chromeDriver.findElementByXPath("").click();
     // Thread.sleep(5000);
 
@@ -317,6 +324,7 @@ public class Widgets {
       Utils.chromeDriver.findElementsByXPath("").size() == 0)
     {
     System.out.println("Esta prueba ha fallado!!");
+    }
 
     //Paso 2
     
@@ -347,6 +355,7 @@ public class Widgets {
     //Paso 1
     
     //Acción
+    Utils.chromeDriver.get("https://demoqa.com/");
     Utils.chromeDriver.findElementByXPath("").click();
     // Thread.sleep(5000);
 
@@ -357,6 +366,7 @@ public class Widgets {
       Utils.chromeDriver.findElementsByXPath("").size() == 0)
     {
     System.out.println("Esta prueba ha fallado!!");
+    }
 
     //Paso 2
     
@@ -387,6 +397,7 @@ public class Widgets {
     //Paso 1
     
     //Acción
+    Utils.chromeDriver.get("https://demoqa.com/");
     Utils.chromeDriver.findElementByXPath("").click();
     // Thread.sleep(5000);
 
@@ -397,6 +408,7 @@ public class Widgets {
       Utils.chromeDriver.findElementsByXPath("").size() == 0)
     {
     System.out.println("Esta prueba ha fallado!!");
+    }
 
     //Paso 2
     
@@ -427,6 +439,7 @@ public class Widgets {
     //Paso 1
     
     //Acción
+    Utils.chromeDriver.get("https://demoqa.com/");
     Utils.chromeDriver.findElementByXPath("").click();
     // Thread.sleep(5000);
 
@@ -441,6 +454,7 @@ public class Widgets {
       Utils.chromeDriver.findElementsByXPath("").size() == 0)
     {
     System.out.println("Esta prueba ha fallado!!");
+    }
 
     //Paso 2
     
@@ -472,6 +486,7 @@ public class Widgets {
     //Paso 1
     
     //Acción
+    Utils.chromeDriver.get("https://demoqa.com/");
     Utils.chromeDriver.findElementByXPath("").click();
     // Thread.sleep(5000);
 
@@ -486,6 +501,7 @@ public class Widgets {
       Utils.chromeDriver.findElementsByXPath("").size() == 0)
     {
     System.out.println("Esta prueba ha fallado!!");
+    }
 
     //Paso 2
     
@@ -517,6 +533,7 @@ public class Widgets {
     //Paso 1
     
     //Acción
+    Utils.chromeDriver.get("https://demoqa.com/");
     Utils.chromeDriver.findElementByXPath("").click();
     // Thread.sleep(5000);
 
@@ -531,6 +548,7 @@ public class Widgets {
       Utils.chromeDriver.findElementsByXPath("").size() == 0)
     {
     System.out.println("Esta prueba ha fallado!!");
+    }
 
     //Paso 2
     
