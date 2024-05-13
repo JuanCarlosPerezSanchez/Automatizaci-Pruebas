@@ -62,14 +62,14 @@ public class Widgets {
     
     //Acción
     Utils.chromeDriver.get("https://demoqa.com/");
-    Utils.chromeDriver.findElementByXPath("//*[@id='app']/div/div/div[2]/div/div[4]").click();
+    Utils.chromeDriver.findElementByXPath("//div[@class='card mt-4 top-card' and descendant::h5[text()='Widgets']]").click();
     Utils.chromeDriver.findElementByXPath("//li[contains(@class, 'btn btn-light') and @id='item-2' and span[text()='Date Picker']]").click();
     Thread.sleep(5000);
 
     //Condición
     if(Utils.chromeDriver.findElementsByXPath("//input[@id='datePickerMonthYearInput' and @class='react-datepicker-ignore-onclickoutside']").size() == 0 ||
       Utils.chromeDriver.findElementsByXPath("//input[@id='dateAndTimePickerInput' and @class='react-datepicker-ignore-onclickoutside']").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("//*[@id=\"datePickerContainer\"]/h1").size() == 0 ||
+      Utils.chromeDriver.findElementsByXPath("//*[@id='datePickerContainer']/h1").size() == 0 ||
       // Utils.chromeDriver.findElementsByXPath("Macro blanco?????????????????????").size() == 0 ||
       Utils.chromeDriver.findElementsByXPath("//span[contains(text(),'Date Picker')]/parent::li").contains("active"))
       {
@@ -79,7 +79,7 @@ public class Widgets {
     //Paso 2
     
     //Acción
-    Utils.chromeDriver.findElementByXPath("//input[@id='datePickerMonthYearInput' and @class='react-datepicker-ignore-onclickoutside']").click();
+    Utils.chromeDriver.findElementByXPath("//*[@id='datePickerMonthYearInput']").click();
     
     // Thread.sleep(5000);
     
