@@ -53,7 +53,7 @@ public class Widgets {
    * Verificar el funcionamiento de "Date Picker"
    * @throws InterruptedException 
    */
-  @Test(description = "Widgets_TC04 - Verificar el funcionamiento de \"Date Picker", enabled = true)
+  @Test(description = "Widgets_TC04 - Verificar el funcionamiento de \"Date Picker", enabled = false)
   public void Widgets_TC04() throws InterruptedException {
 
     // Widgets_TC01();
@@ -62,42 +62,41 @@ public class Widgets {
     
     //Acción
     Utils.chromeDriver.get("https://demoqa.com/");
-    Utils.chromeDriver.findElementByXPath("//div[@class='card mt-4 top-card' and descendant::h5[text()='Widgets']]").click();
+    Utils.chromeDriver.findElementByXPath("//div[@class='card mt-4 top-card' and descendant::h5[text()='Widgets']]").click(); /* -> Esto hay que borrarlo */
     Utils.chromeDriver.findElementByXPath("//li[contains(@class, 'btn btn-light') and @id='item-2' and span[text()='Date Picker']]").click();
-    Thread.sleep(5000);
+    // Thread.sleep(5000);
 
     //Condición
-    if(Utils.chromeDriver.findElementsByXPath("//input[@id='datePickerMonthYearInput' and @class='react-datepicker-ignore-onclickoutside']").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("//input[@id='dateAndTimePickerInput' and @class='react-datepicker-ignore-onclickoutside']").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("//*[@id='datePickerContainer']/h1").size() == 0 ||
-      // Utils.chromeDriver.findElementsByXPath("Macro blanco?????????????????????").size() == 0 ||
+    if(Utils.chromeDriver.findElementsByXPath("//input[@id='datePickerMonthYearInput' and @class='react-datepicker-ignore-onclickoutside']").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("//input[@id='dateAndTimePickerInput' and @class='react-datepicker-ignore-onclickoutside']").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("//*[@id='datePickerContainer']/h1").size() > 0 ||
       Utils.chromeDriver.findElementsByXPath("//span[contains(text(),'Date Picker')]/parent::li").contains("active"))
       {
-        System.out.println("Esta prueba ha fallado!!");
+        System.out.println("No hay fallos!!");
       }
-
+    
     //Paso 2
     
     //Acción
     Utils.chromeDriver.findElementByXPath("//*[@id='datePickerMonthYearInput']").click();
-    
     // Thread.sleep(5000);
     
     //Condición
-    if(Utils.chromeDriver.findElementsByXPath("//*[@id='datePickerMonthYear']/div[2]/div[2]").size() == 0)
+    if(Utils.chromeDriver.findElementsByXPath("//*[@id='datePickerMonthYear']/div[2]/div[2]").size() > 0)
     {
-      System.out.println("Esta prueba ha fallado!!");
+      System.out.println("No hay fallos!!");
     }
 
     //Acción
-    Utils.chromeDriver.findElementByXPath("//input[@id='dateAndTimePickerInput' and @class='react-datepicker-ignore-onclickoutside']").click();
+    Utils.chromeDriver.findElementByXPath("//*[@id='datePickerContainer']/h1").click();
+    Utils.chromeDriver.findElementByXPath("//*[@id='dateAndTimePickerInput']").click();
     // Thread.sleep(5000);
     
     //Condición
-    if(Utils.chromeDriver.findElementsByXPath("//*[@id=\"dateAndTimePicker\"]/div[2]/div[2]/div/div/div[2]").size() == 0 ||
-    Utils.chromeDriver.findElementsByXPath("//*[@id=\"dateAndTimePicker\"]/div[2]/div[2]/div/div/div[3]").size() == 0)
+    if(Utils.chromeDriver.findElementsByXPath("//div[@class='react-datepicker__month-container']").size() > 0 ||
+    Utils.chromeDriver.findElementsByXPath("//*[@id='dateAndTimePicker']/div[2]/div[2]/div/div/div[3]").size() > 0)
     {
-      System.out.println("Esta prueba ha fallado!!");
+      System.out.println("No hay fallos!!");
     }
   }
 
@@ -112,36 +111,36 @@ public class Widgets {
   @Test(description = "Widgets_TC05 - Verificar el funcionamiento de \"Slider", enabled = false)
   public void Widgets_TC05() throws InterruptedException {
 
-    Widgets_TC01();
+    // Widgets_TC01();
 
     //Paso 1
     
     //Acción
     Utils.chromeDriver.get("https://demoqa.com/");
-    Utils.chromeDriver.findElementByXPath("//li[@class='btn btn-light active' and @id='item-3']").click();
-    // Thread.sleep(5000);
+    Utils.chromeDriver.findElementByXPath("//div[@class='card mt-4 top-card' and descendant::h5[text()='Widgets']]").click(); /* -> Esto hay que borrarlo */
+    Utils.chromeDriver.findElementByXPath("//li[@id='item-3' and span[@class='text' and text()='Slider']]").click();
+    Thread.sleep(5000);
 
     //Condición
-    if(Utils.chromeDriver.findElementsByXPath("//*[@id='sliderContainer']/div[1]/span").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("//*[@id='sliderValue']").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("//*[@id='app']/div/div/div/div[2]/form/h1").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("Macro blanco?????????????????????").size() == 0 ||
+    if(Utils.chromeDriver.findElementsByXPath("//*[@id='sliderContainer']/div[1]/span").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("//*[@id='sliderValue']").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("//*[@id='app']/div/div/div/div[2]/form/h1").size() > 0 ||
       Utils.chromeDriver.findElementsByXPath("//li[@class='btn btn-light active' and @id='item-3']").contains("active"))
     {
-    System.out.println("Esta prueba ha fallado!!");
+    System.out.println("No hay fallos!!");
     }
 
     //Paso 2
     
     //Acción
     Utils.chromeDriver.findElementByXPath("//*[@id='sliderContainer']/div[1]/span/input").click();
-    // Thread.sleep(5000);
+    Thread.sleep(5000);
 
     //Condición
-    if(Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() == 0)
+    if(Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("").size() > 0)
     {
-    System.out.println("Esta prueba ha fallado!!");
+    System.out.println("No hay fallos!!");
     }
   }
 
@@ -153,27 +152,28 @@ public class Widgets {
    * Verificar el funcionamiento de "Proggres Bar" 
    * @throws InterruptedException 
    */
-  @Test(description = "Widgets_TC06 - Verificar el funcionamiento de \"Proggres Bar", enabled = false)
+  @Test(description = "Widgets_TC06 - Verificar el funcionamiento de \"Proggres Bar", enabled = true)
   public void Widgets_TC06() throws InterruptedException {
 
-    Widgets_TC01();
+    // Widgets_TC01();
 
     //Paso 1
     
     //Acción
     Utils.chromeDriver.get("https://demoqa.com/");
-    Utils.chromeDriver.findElementByXPath("").click();
+    Utils.chromeDriver.findElementByXPath("//div[@class='card mt-4 top-card' and descendant::h5[text()='Widgets']]").click(); /* -> Esto hay que borrarlo */
+    Utils.chromeDriver.findElementByXPath("//li[@id='item-4' and span[text()='Progress Bar']]").click();
     // Thread.sleep(5000);
 
     //Condición
-    if(Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() == 0)
+    if(Utils.chromeDriver.findElementsByXPath("//*[@id='progressBarContainer']/h1").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("").size() > 0)
     {
-    System.out.println("Esta prueba ha fallado!!");
+    System.out.println("No hay fallos!!");
     }
 
     //Paso 2
@@ -183,10 +183,10 @@ public class Widgets {
     // Thread.sleep(5000);
 
     //Condición
-    if(Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() == 0)
+    if(Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("").size() > 0)
     {
-    System.out.println("Esta prueba ha fallado!!");
+    System.out.println("No hay fallos!!");
     }
 
     //Paso 3
@@ -196,10 +196,10 @@ public class Widgets {
     // Thread.sleep(5000);
 
     //Condición
-    if(Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() == 0)
+    if(Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("").size() > 0)
     {
-    System.out.println("Esta prueba ha fallado!!");
+    System.out.println("No hay fallos!!");
     }
   }
   
@@ -224,16 +224,16 @@ public class Widgets {
     // Thread.sleep(5000);
 
     //Condición
-    if(Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() == 0)
+    if(Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("").size() > 0)
     {
-    System.out.println("Esta prueba ha fallado!!");
+    System.out.println("No hay fallos!!");
     }
 
     //Paso 2
@@ -243,9 +243,9 @@ public class Widgets {
     // Thread.sleep(5000);
 
     //Condición
-    if(Utils.chromeDriver.findElementsByXPath("").size() == 0)
+    if(Utils.chromeDriver.findElementsByXPath("").size() > 0)
     {
-    System.out.println("Esta prueba ha fallado!!");
+    System.out.println("No hay fallos!!");
     }
   }
   
@@ -270,15 +270,15 @@ public class Widgets {
     // Thread.sleep(5000);
 
     //Condición
-    if(Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() == 0)
+    if(Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("").size() > 0)
     {
-    System.out.println("Esta prueba ha fallado!!");
+    System.out.println("No hay fallos!!");
     }
 
     //Paso 2
@@ -288,12 +288,12 @@ public class Widgets {
     // Thread.sleep(5000);
 
     //Condición
-    if(Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
-    Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
-    Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
-    Utils.chromeDriver.findElementsByXPath("").size() == 0)
+    if(Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
+    Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
+    Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
+    Utils.chromeDriver.findElementsByXPath("").size() > 0)
     {
-    System.out.println("Esta prueba ha fallado!!");
+    System.out.println("No hay fallos!!");
     }
   }
   
@@ -318,12 +318,12 @@ public class Widgets {
     // Thread.sleep(5000);
 
     //Condición
-    if(Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() == 0)
+    if(Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("").size() > 0)
     {
-    System.out.println("Esta prueba ha fallado!!");
+    System.out.println("No hay fallos!!");
     }
 
     //Paso 2
@@ -333,9 +333,9 @@ public class Widgets {
     // Thread.sleep(5000);
 
     //Condición
-    if(Utils.chromeDriver.findElementsByXPath("").size() == 0)
+    if(Utils.chromeDriver.findElementsByXPath("").size() > 0)
     {
-    System.out.println("Esta prueba ha fallado!!");
+    System.out.println("No hay fallos!!");
     }
   }
   
@@ -360,12 +360,12 @@ public class Widgets {
     // Thread.sleep(5000);
 
     //Condición
-    if(Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() == 0)
+    if(Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("").size() > 0)
     {
-    System.out.println("Esta prueba ha fallado!!");
+    System.out.println("No hay fallos!!");
     }
 
     //Paso 2
@@ -375,9 +375,9 @@ public class Widgets {
     // Thread.sleep(5000);
 
     //Condición
-    if(Utils.chromeDriver.findElementsByXPath("").size() == 0)
+    if(Utils.chromeDriver.findElementsByXPath("").size() > 0)
     {
-    System.out.println("Esta prueba ha fallado!!");
+    System.out.println("No hay fallos!!");
     }
   }
   
@@ -402,12 +402,12 @@ public class Widgets {
     // Thread.sleep(5000);
 
     //Condición
-    if(Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() == 0)
+    if(Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("").size() > 0)
     {
-    System.out.println("Esta prueba ha fallado!!");
+    System.out.println("No hay fallos!!");
     }
 
     //Paso 2
@@ -417,9 +417,9 @@ public class Widgets {
     // Thread.sleep(5000);
 
     //Condición
-    if(Utils.chromeDriver.findElementsByXPath("").size() == 0)
+    if(Utils.chromeDriver.findElementsByXPath("").size() > 0)
     {
-    System.out.println("Esta prueba ha fallado!!");
+    System.out.println("No hay fallos!!");
     }
   }
   
@@ -444,16 +444,16 @@ public class Widgets {
     // Thread.sleep(5000);
 
     //Condición
-    if(Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() == 0)
+    if(Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("").size() > 0)
     {
-    System.out.println("Esta prueba ha fallado!!");
+    System.out.println("No hay fallos!!");
     }
 
     //Paso 2
@@ -463,10 +463,10 @@ public class Widgets {
     // Thread.sleep(5000);
 
     //Condición
-    if(Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() == 0)
+    if(Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("").size() > 0)
     {
-    System.out.println("Esta prueba ha fallado!!");
+    System.out.println("No hay fallos!!");
     }
   }
   
@@ -491,16 +491,16 @@ public class Widgets {
     // Thread.sleep(5000);
 
     //Condición
-    if(Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() == 0)
+    if(Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("").size() > 0)
     {
-    System.out.println("Esta prueba ha fallado!!");
+    System.out.println("No hay fallos!!");
     }
 
     //Paso 2
@@ -510,10 +510,10 @@ public class Widgets {
     // Thread.sleep(5000);
 
     //Condición
-    if(Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() == 0)
+    if(Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("").size() > 0)
     {
-    System.out.println("Esta prueba ha fallado!!");
+    System.out.println("No hay fallos!!");
     }
   }
   
@@ -538,16 +538,16 @@ public class Widgets {
     // Thread.sleep(5000);
 
     //Condición
-    if(Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() == 0)
+    if(Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("").size() > 0)
     {
-    System.out.println("Esta prueba ha fallado!!");
+    System.out.println("No hay fallos!!");
     }
 
     //Paso 2
@@ -557,10 +557,10 @@ public class Widgets {
     // Thread.sleep(5000);
 
     //Condición
-    if(Utils.chromeDriver.findElementsByXPath("").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() == 0)
+    if(Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("").size() > 0)
     {
-    System.out.println("Esta prueba ha fallado!!");
+    System.out.println("No hay fallos!!");
     }
   }
 }

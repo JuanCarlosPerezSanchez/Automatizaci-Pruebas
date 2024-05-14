@@ -109,4 +109,59 @@ public class Elements {
     }
 
   }
+
+// ----------------------------
+
+
+
+
+
+
+
+
+
+
+  /**
+   * Verificar el Funcionamiento de Buttons.
+   * @throws InterruptedException 
+   */
+  @Test(description = "Elements_TC14 - Verificar el Funcionamiento de Buttons.", enabled = false)
+  public void Elements_TC14() throws InterruptedException {
+
+    // Elements_TC01();
+
+    // Paso 1
+    // Acción
+    Utils.chromeDriver.findElementByXPath("//li[@id='item-4' and span[@class='text' and text()='Buttons']]").click();
+    
+    Thread.sleep(1000);
+    // Condición
+    if(Utils.chromeDriver.findElementsByXPath("//*[@id='doubleClickBtn']").size() > 0){
+      System.out.println("");
+    }
+    //*[@id="doubleClickBtn"]
+
+
+    // Paso 2
+    // Acción
+    Utils.chromeDriver.findElementByXPath("").sendKeys("Antonio");
+
+    WebElement botonSubmit = Utils.chromeDriver.findElementByXPath("");
+    JavascriptExecutor js = (JavascriptExecutor) Utils.chromeDriver;
+    js.executeScript("arguments[0].scrollIntoView(true);", botonSubmit);
+    Actions actions = new Actions(Utils.chromeDriver);
+    actions.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).perform();
+    Thread.sleep(1000);
+
+    Utils.chromeDriver.findElementByXPath("//button[contains(@id,'submit')]").click();
+    Thread.sleep(5000);
+    // Condición
+
+    //p[contains(@id,'name')]
+    if(Utils.chromeDriver.findElementByXPath("//p[contains(@id,'name')]").getText().contains("Antonio")){
+      System.out.println("Aparece el texto 'Antonio' en el elemento //p[contains(@id,'name')]");
+    }
+
+  }
+
 }
