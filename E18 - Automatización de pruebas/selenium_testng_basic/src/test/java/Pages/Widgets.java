@@ -4,6 +4,7 @@ import Utilities.Utils;
 
 import java.sql.Date;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -152,7 +153,7 @@ public class Widgets {
    * Verificar el funcionamiento de "Proggres Bar" 
    * @throws InterruptedException 
    */
-  @Test(description = "Widgets_TC06 - Verificar el funcionamiento de \"Proggres Bar", enabled = true)
+  @Test(description = "Widgets_TC06 - Verificar el funcionamiento de \"Proggres Bar", enabled = false)
   public void Widgets_TC06() throws InterruptedException {
 
     // Widgets_TC01();
@@ -162,16 +163,23 @@ public class Widgets {
     //Acción
     Utils.chromeDriver.get("https://demoqa.com/");
     Utils.chromeDriver.findElementByXPath("//div[@class='card mt-4 top-card' and descendant::h5[text()='Widgets']]").click(); /* -> Esto hay que borrarlo */
-    Utils.chromeDriver.findElementByXPath("//li[@id='item-4' and span[text()='Progress Bar']]").click();
-    // Thread.sleep(5000);
+
+    WebElement ProgressBar = Utils.chromeDriver.findElementByXPath("//li[@id='item-4' and span[@class='text' and text()='Progress Bar']]");
+    JavascriptExecutor js = (JavascriptExecutor) Utils.chromeDriver;
+    js.executeScript("arguments[0].scrollIntoView(true);", ProgressBar);
+    Actions actions = new Actions(Utils.chromeDriver);
+    actions.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).perform();
+    Thread.sleep(3000);
+
+    Utils.chromeDriver.findElementByXPath("//li[@id='item-4' and span[@class='text' and text()='Progress Bar']]").click();
+    Thread.sleep(3000);
 
     //Condición
     if(Utils.chromeDriver.findElementsByXPath("//*[@id='progressBarContainer']/h1").size() > 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() > 0)
+      Utils.chromeDriver.findElementsByXPath("//*[@id='progressBar']").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("//*[@id='startStopButton']").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("//*[@id='progressBarContainer']/h1").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("//li[@class='btn btn-light active' and @id='item-3']").contains("active"))
     {
     System.out.println("No hay fallos!!");
     }
@@ -179,12 +187,12 @@ public class Widgets {
     //Paso 2
     
     //Acción
-    Utils.chromeDriver.findElementByXPath("").click();
-    // Thread.sleep(5000);
+    Utils.chromeDriver.findElementByXPath("//*[@id='startStopButton']").click();
+    Thread.sleep(5000);
 
     //Condición
-    if(Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() > 0)
+    if(Utils.chromeDriver.findElementsByXPath("//*[@id='progressBar']/div").size() > 0 || /* NO SE */
+      Utils.chromeDriver.findElementsByXPath("//*[@id='startStopButton']").size() > 0)
     {
     System.out.println("No hay fallos!!");
     }
@@ -192,12 +200,12 @@ public class Widgets {
     //Paso 3
     
     //Acción
-    Utils.chromeDriver.findElementByXPath("").click();
-    // Thread.sleep(5000);
+    Utils.chromeDriver.findElementByXPath("//*[@id='startStopButton']").click();
+    Thread.sleep(3000);
 
     //Condición
-    if(Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() > 0)
+    if(/*Utils.chromeDriver.findElementsByXPath("Barra se detiene estado porcentaje ????????????????").size() > 0 ||*/
+      Utils.chromeDriver.findElementsByXPath("//*[@id='startStopButton']").size() > 0)
     {
     System.out.println("No hay fallos!!");
     }
@@ -214,24 +222,33 @@ public class Widgets {
   @Test(description = "Widgets_TC07 - Verificar el funcionamiento de \"Tabs", enabled = false)
   public void Widgets_TC07() throws InterruptedException {
 
-    Widgets_TC01();
+    // Widgets_TC01();
 
     //Paso 1
     
     //Acción
     Utils.chromeDriver.get("https://demoqa.com/");
-    Utils.chromeDriver.findElementByXPath("").click();
+    Utils.chromeDriver.findElementByXPath("//div[@class='card mt-4 top-card' and descendant::h5[text()='Widgets']]").click(); /* -> Esto hay que borrarlo */
+
+    WebElement Tabs = Utils.chromeDriver.findElementByXPath("//li[@id='item-5' and span[@class='text' and text()='Tabs']]");
+    JavascriptExecutor js = (JavascriptExecutor) Utils.chromeDriver;
+    js.executeScript("arguments[0].scrollIntoView(true);", Tabs);
+    Actions actions = new Actions(Utils.chromeDriver);
+    actions.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).perform();
+    // Thread.sleep(5000);
+
+    Utils.chromeDriver.findElementByXPath("//li[@id='item-5' and span[@class='text' and text()='Tabs']]").click();
     // Thread.sleep(5000);
 
     //Condición
-    if(Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() > 0)
+    if(Utils.chromeDriver.findElementsByXPath("//*[@id='tabsContainer']/h1").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("//*[@id='demo-tab-more']").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("//a[@id='demo-tab-origin' and @class='nav-item nav-link' and text()='Origin']").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("//a[@id='demo-tab-use' and @class='nav-item nav-link' and text()='Use']").size() > 0 ||
+      // Utils.chromeDriver.findElementsByXPath("Apartado en base al seleccionado ??????????").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("//*[@id='tabsContainer']/h1").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("//li[contains(@class, 'active')][last()]").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("//*[@id='tabsContainer']/div[2]").size() > 0)
     {
     System.out.println("No hay fallos!!");
     }
@@ -239,11 +256,11 @@ public class Widgets {
     //Paso 2
     
     //Acción
-    Utils.chromeDriver.findElementByXPath("").click();
+    Utils.chromeDriver.findElementByXPath("//*[@id='demo-tab-origin']").click();
     // Thread.sleep(5000);
 
     //Condición
-    if(Utils.chromeDriver.findElementsByXPath("").size() > 0)
+    if(Utils.chromeDriver.findElementsByXPath("//*[@id='tabsContainer']/div[2]").size() > 0)
     {
     System.out.println("No hay fallos!!");
     }
@@ -260,23 +277,32 @@ public class Widgets {
   @Test(description = "Widgets_TC08 - Verificar el funcionamiento de \"Tool Tips", enabled = false)
   public void Widgets_TC08() throws InterruptedException {
 
-    Widgets_TC01();
+    // Widgets_TC01();
 
     //Paso 1
 
     //Acción
     Utils.chromeDriver.get("https://demoqa.com/");
-    Utils.chromeDriver.findElementByXPath("").click();
+    Utils.chromeDriver.findElementByXPath("//div[@class='card mt-4 top-card' and descendant::h5[text()='Widgets']]").click(); /* -> Esto hay que borrarlo */
+    // Thread.sleep(5000);
+
+    WebElement Tabs = Utils.chromeDriver.findElementByXPath("//li[@id='item-5' and span[@class='text' and text()='Tabs']]");
+    JavascriptExecutor js = (JavascriptExecutor) Utils.chromeDriver;
+    js.executeScript("arguments[0].scrollIntoView(true);", Tabs);
+    Actions actions = new Actions(Utils.chromeDriver);
+    actions.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).perform();
+    // Thread.sleep(5000);
+
+    Utils.chromeDriver.findElementByXPath("//li[@id='item-6' and span[@class='text' and text()='Tool Tips']]").click();
     // Thread.sleep(5000);
 
     //Condición
-    if(Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() > 0)
+    if(Utils.chromeDriver.findElementsByXPath("//*[@id='toopTipContainer']/h1").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("//*[@id='texToolTopContainer']").size() > 0 ||
+      // Utils.chromeDriver.findElementsByCssSelector(".btn-success {color: #fff; background-color: #28a745; border-color: #28a745;}").contains(background-color: #28a745;) ????????????||
+      Utils.chromeDriver.findElementsByXPath("//*[@id='toolTipTextField']").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("//li[@id='item-6' and contains(@class, 'active')]").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("//*[@id='texToolTopContainer']").size() > 0)
     {
     System.out.println("No hay fallos!!");
     }
@@ -284,16 +310,40 @@ public class Widgets {
     //Paso 2
     
     //Acción
-    Utils.chromeDriver.findElementByXPath("").click();
-    // Thread.sleep(5000);
+
+    WebElement elmento = Utils.chromeDriver.findElement(By.xpath("//*[@id='toolTipButton']"));
+    Actions actions2 = new Actions(Utils.chromeDriver);
+    actions2.moveToElement(elmento).perform();
+
+    
+    //Condición
+    if(Utils.chromeDriver.findElementsByXPath("//button[@id='toolTipButton' and @aria-describedby='buttonToolTip']").size() > 0)
+    {
+      System.out.println("No hay fallos!!");
+    }
+
+    //Acción
+    
+    WebElement elmento1 = Utils.chromeDriver.findElement(By.xpath("//*[@id='toolTipTextField']"));
+    Actions actions3 = new Actions(Utils.chromeDriver);
+    actions3.moveToElement(elmento1).perform();
 
     //Condición
-    if(Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
-    Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
-    Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
-    Utils.chromeDriver.findElementsByXPath("").size() > 0)
+    if(Utils.chromeDriver.findElementsByXPath("//input[@id='toolTipTextField' and @aria-describedby='textFieldToolTip']").size() > 0)
     {
-    System.out.println("No hay fallos!!");
+      System.out.println("No hay fallos!!");
+    }
+
+    //Acción
+    
+    WebElement elmento2 = Utils.chromeDriver.findElement(By.xpath("//*[@id='texToolTopContainer']/a[1]"));
+    Actions actions4 = new Actions(Utils.chromeDriver);
+    actions4.moveToElement(elmento2).perform();
+
+    //Condición
+    if(Utils.chromeDriver.findElementsByXPath("//a[@aria-describedby='contraryTexToolTip']").size() > 0)
+    {
+      System.out.println("No hay fallos!!");
     }
   }
   
@@ -308,20 +358,28 @@ public class Widgets {
   @Test(description = "Widgets_TC09 - Verificar el funcionamiento de \"Menu - Menu 1", enabled = false)
   public void Widgets_TC09() throws InterruptedException {
 
-    Widgets_TC01();
+    // Widgets_TC01();
 
     //Paso 1
     
     //Acción
     Utils.chromeDriver.get("https://demoqa.com/");
-    Utils.chromeDriver.findElementByXPath("").click();
+    Utils.chromeDriver.findElementByXPath("//div[@class='card mt-4 top-card' and descendant::h5[text()='Widgets']]").click(); /* -> Esto hay que borrarlo */
+
+    WebElement Menu = Utils.chromeDriver.findElementByXPath("//li[@id='item-7' and span[@class='text' and text()='Menu']]");
+    JavascriptExecutor js = (JavascriptExecutor) Utils.chromeDriver;
+    js.executeScript("arguments[0].scrollIntoView(true);", Menu);
+    Actions actions = new Actions(Utils.chromeDriver);
+    actions.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).perform();
+    // Thread.sleep(5000);
+
+    Utils.chromeDriver.findElementByXPath("//li[@id='item-7' and span[@class='text' and text()='Menu']]").click();
     // Thread.sleep(5000);
 
     //Condición
-    if(Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() > 0)
+    if(Utils.chromeDriver.findElementsByXPath("//h1[text()='Menu']").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("//*[@id='nav']").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("//li[@id='item-7' and contains(@class, 'active')]").size() > 0)
     {
     System.out.println("No hay fallos!!");
     }
@@ -329,11 +387,14 @@ public class Widgets {
     //Paso 2
     
     //Acción
-    Utils.chromeDriver.findElementByXPath("").click();
+
+    WebElement elmento3 = Utils.chromeDriver.findElement(By.xpath("//*[@id='nav']/li[1]/a"));
+    Actions actions5 = new Actions(Utils.chromeDriver);
+    actions5.moveToElement(elmento3).perform();
     // Thread.sleep(5000);
 
     //Condición
-    if(Utils.chromeDriver.findElementsByXPath("").size() > 0)
+    if(Utils.chromeDriver.findElementsByXPath("//*[@id='nav']/li[1]/a").size() > 0)
     {
     System.out.println("No hay fallos!!");
     }
@@ -347,23 +408,31 @@ public class Widgets {
    * Verificar el funcionamiento de "Menu" - Menu 2 
    * @throws InterruptedException 
    */
-  @Test(description = "Widgets_TC10 - Verificar el funcionamiento de \"Menu - Menu 2", enabled = false)
+  @Test(description = "Widgets_TC10 - Verificar el funcionamiento de \"Menu - Menu 2", enabled = true)
   public void Widgets_TC10() throws InterruptedException {
 
-    Widgets_TC01();
+    // Widgets_TC01();
 
     //Paso 1
     
     //Acción
     Utils.chromeDriver.get("https://demoqa.com/");
-    Utils.chromeDriver.findElementByXPath("").click();
+    Utils.chromeDriver.findElementByXPath("//div[@class='card mt-4 top-card' and descendant::h5[text()='Widgets']]").click(); /* -> Esto hay que borrarlo */
+
+    WebElement Menu = Utils.chromeDriver.findElementByXPath("//li[@id='item-7' and span[@class='text' and text()='Menu']]");
+    JavascriptExecutor js = (JavascriptExecutor) Utils.chromeDriver;
+    js.executeScript("arguments[0].scrollIntoView(true);", Menu);
+    Actions actions = new Actions(Utils.chromeDriver);
+    actions.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).perform();
+    // Thread.sleep(5000);
+
+    Utils.chromeDriver.findElementByXPath("//li[@id='item-7' and span[@class='text' and text()='Menu']]").click();
     // Thread.sleep(5000);
 
     //Condición
-    if(Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() > 0)
+    if(Utils.chromeDriver.findElementsByXPath("//h1[text()='Menu']").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("//*[@id='nav']").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("//li[@id='item-7' and contains(@class, 'active')]").size() > 0)
     {
     System.out.println("No hay fallos!!");
     }
@@ -371,11 +440,16 @@ public class Widgets {
     //Paso 2
     
     //Acción
-    Utils.chromeDriver.findElementByXPath("").click();
+
+    WebElement elmento3 = Utils.chromeDriver.findElement(By.xpath("//*[@id='nav']/li[1]/a"));
+    Actions actions5 = new Actions(Utils.chromeDriver);
+    actions5.moveToElement(elmento3).perform();
     // Thread.sleep(5000);
 
+
     //Condición
-    if(Utils.chromeDriver.findElementsByXPath("").size() > 0)
+    if(Utils.chromeDriver.findElementsByXPath("//*[@id='nav']/li[2]/ul/li[1]/a").size() > 0 ||
+    Utils.chromeDriver.findElementsByXPath("//*[@id='nav']/li[2]/ul/li[2]/a").size() > 0)
     {
     System.out.println("No hay fallos!!");
     }
@@ -392,7 +466,7 @@ public class Widgets {
   @Test(description = "Widgets_TC11 - Verificar el funcionamiento de \"Menu - Menu 3", enabled = false)
   public void Widgets_TC11() throws InterruptedException {
 
-    Widgets_TC01();
+    // Widgets_TC01();
 
     //Paso 1
     
@@ -434,7 +508,7 @@ public class Widgets {
   @Test(description = "Widgets_TC12 - Verificar el funcionamiento de \"Select Menu - Select Menu 1", enabled = false)
   public void Widgets_TC12() throws InterruptedException {
 
-    Widgets_TC01();
+    // Widgets_TC01();
 
     //Paso 1
     
@@ -481,7 +555,7 @@ public class Widgets {
   @Test(description = "Widgets_TC13 - Verificar el funcionamiento de \"Select Menu - Select Menu 2", enabled = false)
   public void Widgets_TC13() throws InterruptedException {
 
-    Widgets_TC01();
+    // Widgets_TC01();
 
     //Paso 1
     
@@ -528,7 +602,7 @@ public class Widgets {
   @Test(description = "Widgets_TC14 - Verificar el funcionamiento de \"Select Menu - Select Menu 3", enabled = false)
   public void Widgets_TC14() throws InterruptedException {
 
-    Widgets_TC01();
+    // Widgets_TC01();
 
     //Paso 1
     
