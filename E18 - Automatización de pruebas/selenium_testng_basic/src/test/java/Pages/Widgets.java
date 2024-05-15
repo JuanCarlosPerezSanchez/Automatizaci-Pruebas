@@ -7,12 +7,15 @@ import java.sql.Date;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
-import org.testng.annotations.AfterSuite;
+
+
 
 
 public class Widgets {
@@ -109,7 +112,7 @@ public class Widgets {
    * Verificar el funcionamiento de "Slider" 
    * @throws InterruptedException 
    */
-  @Test(description = "Widgets_TC05 - Verificar el funcionamiento de \"Slider", enabled = false)
+  @Test(description = "Widgets_TC05 - Verificar el funcionamiento de \"Slider", enabled = true)
   public void Widgets_TC05() throws InterruptedException {
 
     // Widgets_TC01();
@@ -138,6 +141,36 @@ public class Widgets {
     Thread.sleep(5000);
 
     //Condición
+
+
+        // WebElement slider = Utils.chromeDriver.findElement(By.xpath("//*[@id='sliderContainer']/div[1]/span"));
+        // int sliderWidth = slider.getSize().getWidth();
+        // int range = 100;
+        
+        // Actions actions = new Actions(Utils.chromeDriver);
+
+        // int steps = 1;
+        // int stepSize = sliderWidth / range * steps;
+
+        // for (int i = range; i >= 0; i -=steps) {
+        //     actions.clickAndHold(slider).moveByOffset(-stepSize, 0).perform();       -------------->    NO VA
+        //     try {
+        //         Thread.sleep(500); 
+        //     } catch (InterruptedException e) {
+        //         e.printStackTrace();
+        //     }
+        // }
+
+        // for (int i = 0; i >= 50; i +=steps) {
+        //   actions.clickAndHold(slider).moveByOffset(stepSize, 0).perform();
+        //     try {
+        //         Thread.sleep(500); 
+        //     } catch (InterruptedException e) {
+        //         e.printStackTrace();
+        //     }
+        // }
+
+        
     if(Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
       Utils.chromeDriver.findElementsByXPath("").size() > 0)
     {
