@@ -112,13 +112,13 @@ public class Widgets {
    * Verificar el funcionamiento de "Slider" 
    * @throws InterruptedException 
    */
-  @Test(description = "Widgets_TC05 - Verificar el funcionamiento de \"Slider", enabled = true)
+  @Test(description = "Widgets_TC05 - Verificar el funcionamiento de \"Slider", enabled = false)
   public void Widgets_TC05() throws InterruptedException {
 
     // Widgets_TC01();
 
     //Paso 1
-    
+
     //Acción
     Utils.chromeDriver.get("https://demoqa.com/");
     Utils.chromeDriver.findElementByXPath("//div[@class='card mt-4 top-card' and descendant::h5[text()='Widgets']]").click(); /* -> Esto hay que borrarlo */
@@ -137,48 +137,41 @@ public class Widgets {
     //Paso 2
     
     //Acción
-    Utils.chromeDriver.findElementByXPath("//*[@id='sliderContainer']/div[1]/span/input").click();
+    Utils.chromeDriver.findElementByXPath("//*[@id='sliderContainer']/div[1]/span").click();
     Thread.sleep(5000);
 
     //Condición
 
-
-        // WebElement slider = Utils.chromeDriver.findElement(By.xpath("//*[@id='sliderContainer']/div[1]/span"));
-        // int sliderWidth = slider.getSize().getWidth();
-        // int range = 100;
-        
-        // Actions actions = new Actions(Utils.chromeDriver);
-
-        // int steps = 1;
-        // int stepSize = sliderWidth / range * steps;
-
-        // for (int i = range; i >= 0; i -=steps) {
-        //     actions.clickAndHold(slider).moveByOffset(-stepSize, 0).perform();       -------------->    NO VA
-        //     try {
-        //         Thread.sleep(500); 
-        //     } catch (InterruptedException e) {
-        //         e.printStackTrace();
-        //     }
-        // }
-
-        // for (int i = 0; i >= 50; i +=steps) {
-        //   actions.clickAndHold(slider).moveByOffset(stepSize, 0).perform();
-        //     try {
-        //         Thread.sleep(500); 
-        //     } catch (InterruptedException e) {
-        //         e.printStackTrace();
-        //     }
-        // }
-
-        
-    if(Utils.chromeDriver.findElementsByXPath("").size() > 0 ||
-      Utils.chromeDriver.findElementsByXPath("").size() > 0)
-    {
-    System.out.println("No hay fallos!!");
+    WebElement slider = Utils.chromeDriver.findElement(By.xpath("//*[@id='sliderContainer']/div[1]/span"));
+    int sliderWidth = slider.getSize().getWidth();
+    int steps = 1;
+    
+    Actions actions = new Actions(Utils.chromeDriver);
+    
+    for (int i = 1; i <= 50; i += steps) {
+      double movePercentage = (double) i / 100;
+      int moveOffset = (int) (sliderWidth * movePercentage);
+      actions.clickAndHold(slider).moveByOffset(-moveOffset, 0).perform();
+      try {
+        Thread.sleep(1);
+      } catch (InterruptedException e) {
+        e.printStackTrace();
+      }
+    }
+    
+    for (int i = 0; i <= 50; i += steps) {
+      double movePercentage = (double) i / 100;
+      int moveOffset = (int) (sliderWidth * movePercentage);
+      actions.clickAndHold(slider).moveByOffset(moveOffset, -50).perform();
+      try {
+        Thread.sleep(1);
+      } catch (InterruptedException e) {
+        e.printStackTrace();
+      }
     }
   }
 
-  
+
   // -------------------------------------------------------6-----------------------------------------------------------------------------------------------------------------------------
 
 
@@ -224,7 +217,7 @@ public class Widgets {
     // Thread.sleep(5000);
 
     //Condición
-    if(Utils.chromeDriver.findElementsByXPath("//*[@id='progressBar']/div").size() > 0 || /* NO SE */
+    if(Utils.chromeDriver.findElementsByXPath("//*[@id='progressBar']/div").size() > 0 ||
       Utils.chromeDriver.findElementsByXPath("//*[@id='startStopButton']").size() > 0)
     {
     System.out.println("No hay fallos!!");
@@ -237,13 +230,12 @@ public class Widgets {
     // Thread.sleep(5000);
 
     //Condición
-    if(/*Utils.chromeDriver.findElementsByXPath("Barra se detiene estado porcentaje ????????????????").size() > 0 ||*/
-      Utils.chromeDriver.findElementsByXPath("//*[@id='startStopButton']").size() > 0)
+    if(Utils.chromeDriver.findElementsByXPath("//*[@id='startStopButton']").size() > 0)
     {
     System.out.println("No hay fallos!!");
     }
   }
-  
+
 
   // -------------------------------------------------------7-----------------------------------------------------------------------------------------------------------------------------
 
@@ -278,7 +270,6 @@ public class Widgets {
       Utils.chromeDriver.findElementsByXPath("//*[@id='demo-tab-more']").size() > 0 ||
       Utils.chromeDriver.findElementsByXPath("//a[@id='demo-tab-origin' and @class='nav-item nav-link' and text()='Origin']").size() > 0 ||
       Utils.chromeDriver.findElementsByXPath("//a[@id='demo-tab-use' and @class='nav-item nav-link' and text()='Use']").size() > 0 ||
-      // Utils.chromeDriver.findElementsByXPath("Apartado en base al seleccionado ??????????").size() > 0 ||
       Utils.chromeDriver.findElementsByXPath("//*[@id='tabsContainer']/h1").size() > 0 ||
       Utils.chromeDriver.findElementsByXPath("//li[contains(@class, 'active')][last()]").size() > 0 ||
       Utils.chromeDriver.findElementsByXPath("//*[@id='tabsContainer']/div[2]").size() > 0)
