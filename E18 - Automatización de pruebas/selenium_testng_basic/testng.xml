@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="Widgets">
-    <test verbose="2" preserve-order="true" name="Widgets">
+<suite name="AlertsFrameWindows">
+    <test verbose="2" preserve-order="true" name="AlertsFrameWindows">
         <classes>
-            <class name="Pages.Widgets" />
+            <class name="Pages.AlertsFrameWindows" />
         </classes>
     </test>
 </suite>
