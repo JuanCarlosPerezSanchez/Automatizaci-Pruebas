@@ -48,69 +48,69 @@ public class Forms {
   public void TQA_Forms_001() throws InterruptedException {
     Home.TQA_Home_003();
     Utils.chromeDriver.findElementByXPath("//li//span[text()='Practice Form']").click();
-    if(Utils.chromeDriver.findElementsByXPath("//input[contains(@id,\"firstName\")]").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("//input[contains(@id,\"lastName\")]").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("//input[contains(@id,\"userEmail\")]").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("//div//input[contains(@value,\"Male\")]").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("//div//input[contains(@value,\"Female\")]").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("//div//input[contains(@value,\"Other\")]").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("//input[contains(@id,\"userNumber\")]").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("//input[contains(@id,\"dateOfBirthInput\")]").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("//input[contains(@id,\"subjectsInput\")]").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("//input/following-sibling::label[text()=\"Sports\"]").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("//input/following-sibling::label[text()=\"Reading\"]").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("//input/following-sibling::label[text()=\"Music\"]").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("//input[contains(@id,\"uploadPicture\")]").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("//textarea[contains(@id, \"currentAddress\")]").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("//input[contains(@id,\"react-select-6-input\")]").size() == 0 ||
-      Utils.chromeDriver.findElementsByXPath("//input[contains(@id,\"react-select-7-input\")]").size() == 0)
+    if(Utils.chromeDriver.findElementsByXPath("//input[contains(@id,'firstName')]").size() == 0 ||
+      Utils.chromeDriver.findElementsByXPath("//input[contains(@id,'lastName')]").size() == 0 ||
+      Utils.chromeDriver.findElementsByXPath("//input[contains(@id,'userEmail')]").size() == 0 ||
+      Utils.chromeDriver.findElementsByXPath("//div//input[contains(@value,'Male')]").size() == 0 ||
+      Utils.chromeDriver.findElementsByXPath("//div//input[contains(@value,'Female')]").size() == 0 ||
+      Utils.chromeDriver.findElementsByXPath("//div//input[contains(@value,'Other')]").size() == 0 ||
+      Utils.chromeDriver.findElementsByXPath("//input[contains(@id,'userNumber')]").size() == 0 ||
+      Utils.chromeDriver.findElementsByXPath("//input[contains(@id,'dateOfBirthInput')]").size() == 0 ||
+      Utils.chromeDriver.findElementsByXPath("//input[contains(@id,'subjectsInput')]").size() == 0 ||
+      Utils.chromeDriver.findElementsByXPath("//input/following-sibling::label[text()='Sports']").size() == 0 ||
+      Utils.chromeDriver.findElementsByXPath("//input/following-sibling::label[text()='Reading']").size() == 0 ||
+      Utils.chromeDriver.findElementsByXPath("//input/following-sibling::label[text()='Music']").size() == 0 ||
+      Utils.chromeDriver.findElementsByXPath("//input[contains(@id,'uploadPicture')]").size() == 0 ||
+      Utils.chromeDriver.findElementsByXPath("//textarea[contains(@id, 'currentAddress')]").size() == 0 ||
+      Utils.chromeDriver.findElementsByXPath("//input[contains(@id,'react-select-6-input')]").size() == 0 ||
+      Utils.chromeDriver.findElementsByXPath("//input[contains(@id,'react-select-7-input')]").size() == 0)
       {
       System.out.println("Esta validación no bloqueante ha fallado!!");
     }
     
-    Utils.chromeDriver.findElementByXPath("//input[contains(@id,\"firstName\")]").click();
+    Utils.chromeDriver.findElementByXPath("//input[contains(@id,'firstName')]").click();
     Sleeper.SYSTEM_SLEEPER.sleep(Duration.ofSeconds(1));
-    Utils.chromeDriver.findElementByXPath("//input[contains(@id,\"firstName\")]").sendKeys("Pepe");
+    Utils.chromeDriver.findElementByXPath("//input[contains(@id,'firstName')]").sendKeys("Pepe");
     Sleeper.SYSTEM_SLEEPER.sleep(Duration.ofSeconds(1));
-    Utils.chromeDriver.findElementByXPath("//input[contains(@id,\"lastName\")]").click();
+    Utils.chromeDriver.findElementByXPath("//input[contains(@id,'lastName')]").click();
     Sleeper.SYSTEM_SLEEPER.sleep(Duration.ofSeconds(1));
-    Utils.chromeDriver.findElementByXPath("//input[contains(@id,\"lastName\")]").sendKeys("Quality Assurance");
+    Utils.chromeDriver.findElementByXPath("//input[contains(@id,'lastName')]").sendKeys("Quality Assurance");
     Sleeper.SYSTEM_SLEEPER.sleep(Duration.ofSeconds(1));
-    Utils.chromeDriver.findElementByXPath("//input[contains(@id,\"userEmail\")]").click();
+    Utils.chromeDriver.findElementByXPath("//input[contains(@id,'userEmail')]").click();
     Sleeper.SYSTEM_SLEEPER.sleep(Duration.ofSeconds(1));
-    Utils.chromeDriver.findElementByXPath("//input[contains(@id,\"userEmail\")]").sendKeys("pepe@quality.assurance");
+    Utils.chromeDriver.findElementByXPath("//input[contains(@id,'userEmail')]").sendKeys("pepe@quality.assurance");
     Sleeper.SYSTEM_SLEEPER.sleep(Duration.ofSeconds(1));
-    Utils.chromeDriver.findElementByXPath("//input[contains(@value,\"Other\")]/..").click();
+    Utils.chromeDriver.findElementByXPath("//input[contains(@value,'Other')]/..").click();
     Sleeper.SYSTEM_SLEEPER.sleep(Duration.ofSeconds(1));
-    Utils.chromeDriver.findElementByXPath("//input[contains(@id,\"userNumber\")]").click();
+    Utils.chromeDriver.findElementByXPath("//input[contains(@id,'userNumber')]").click();
     Sleeper.SYSTEM_SLEEPER.sleep(Duration.ofSeconds(1));
-    Utils.chromeDriver.findElementByXPath("//input[contains(@id,\"userNumber\")]").sendKeys("0123456789");
+    Utils.chromeDriver.findElementByXPath("//input[contains(@id,'userNumber')]").sendKeys("0123456789");
     Sleeper.SYSTEM_SLEEPER.sleep(Duration.ofSeconds(1));
-    Utils.chromeDriver.findElementByXPath("//input[contains(@id,\"subjectsInput\")]").click();
+    Utils.chromeDriver.findElementByXPath("//input[contains(@id,'subjectsInput')]").click();
     Sleeper.SYSTEM_SLEEPER.sleep(Duration.ofSeconds(1));
-    Utils.chromeDriver.findElementByXPath("//input[contains(@id,\"subjectsInput\")]").sendKeys("Computer Science");
+    Utils.chromeDriver.findElementByXPath("//input[contains(@id,'subjectsInput')]").sendKeys("Computer Science");
     Sleeper.SYSTEM_SLEEPER.sleep(Duration.ofSeconds(1));
-    Utils.chromeDriver.findElementByXPath("//input[contains(@id,\"subjectsInput\")]").sendKeys(Keys.ENTER);
+    Utils.chromeDriver.findElementByXPath("//input[contains(@id,'subjectsInput')]").sendKeys(Keys.ENTER);
     Sleeper.SYSTEM_SLEEPER.sleep(Duration.ofSeconds(1));
-    Utils.chromeDriver.findElementByXPath("//input[contains(@id,\"subjectsInput\")]").sendKeys("Maths");
+    Utils.chromeDriver.findElementByXPath("//input[contains(@id,'subjectsInput')]").sendKeys("Maths");
     Sleeper.SYSTEM_SLEEPER.sleep(Duration.ofSeconds(1));
-    Utils.chromeDriver.findElementByXPath("//input[contains(@id,\"subjectsInput\")]").sendKeys(Keys.ENTER);
+    Utils.chromeDriver.findElementByXPath("//input[contains(@id,'subjectsInput')]").sendKeys(Keys.ENTER);
     Sleeper.SYSTEM_SLEEPER.sleep(Duration.ofSeconds(1));
-    Utils.chromeDriver.findElementByXPath("//input/following-sibling::label[text()=\"Music\"]").click();
+    Utils.chromeDriver.findElementByXPath("//input/following-sibling::label[text()='Music']").click();
     Sleeper.SYSTEM_SLEEPER.sleep(Duration.ofSeconds(1));
-    Utils.chromeDriver.findElementByXPath("//textarea[contains(@id, \"currentAddress\")]").sendKeys("Assurance Quality");
+    Utils.chromeDriver.findElementByXPath("//textarea[contains(@id, 'currentAddress')]").sendKeys("Assurance Quality");
     Sleeper.SYSTEM_SLEEPER.sleep(Duration.ofSeconds(1));
-    Utils.chromeDriver.findElementsByXPath("//div[contains(@id,\"stateCity-wrapper\")]//div[contains(@id,\"state\")]").get(0).click();
+    Utils.chromeDriver.findElementsByXPath("//div[contains(@id,'stateCity-wrapper')]//div[contains(@id,'state')]").get(0).click();
     Sleeper.SYSTEM_SLEEPER.sleep(Duration.ofSeconds(1));
-    Utils.chromeDriver.findElementsByXPath("//div[contains(@id,\"stateCity-wrapper\")]//div[contains(@id,\"state\")]").get(0).sendKeys("Haryana");
+    Utils.chromeDriver.findElementsByXPath("//div[contains(@id,'stateCity-wrapper')]//div[contains(@id,'state')]").get(0).sendKeys("Haryana");
     Sleeper.SYSTEM_SLEEPER.sleep(Duration.ofSeconds(1));
-    Utils.chromeDriver.findElementsByXPath("//div[contains(@id,\"stateCity-wrapper\")]//div[contains(@id,\"state\")]").get(0).sendKeys(Keys.ENTER);
+    Utils.chromeDriver.findElementsByXPath("//div[contains(@id,'stateCity-wrapper')]//div[contains(@id,'state')]").get(0).sendKeys(Keys.ENTER);
     Sleeper.SYSTEM_SLEEPER.sleep(Duration.ofSeconds(1));
-    Utils.chromeDriver.findElementsByXPath("//div[contains(@id,\"stateCity-wrapper\")]//div[contains(@id,\"city\")]").get(1).click();
+    Utils.chromeDriver.findElementsByXPath("//div[contains(@id,'stateCity-wrapper')]//div[contains(@id,'city')]").get(1).click();
     Sleeper.SYSTEM_SLEEPER.sleep(Duration.ofSeconds(1));
-    Utils.chromeDriver.findElementsByXPath("//div[contains(@id,\"stateCity-wrapper\")]//div[contains(@id,\"city\")]").get(1).sendKeys("Karnal");
+    Utils.chromeDriver.findElementsByXPath("//div[contains(@id,'stateCity-wrapper')]//div[contains(@id,'city')]").get(1).sendKeys("Karnal");
     Sleeper.SYSTEM_SLEEPER.sleep(Duration.ofSeconds(1));
-    Utils.chromeDriver.findElementsByXPath("//div[contains(@id,\"stateCity-wrapper\")]//div[contains(@id,\"city\")]").get(1).sendKeys(Keys.ENTER);
+    Utils.chromeDriver.findElementsByXPath("//div[contains(@id,'stateCity-wrapper')]//div[contains(@id,'city')]").get(1).sendKeys(Keys.ENTER);
     Sleeper.SYSTEM_SLEEPER.sleep(Duration.ofSeconds(1));
 
   }

@@ -37,6 +37,141 @@ public class AlertsFrameWindows {
    * 
    **************************************************/
 
+   
+  // -------------------------------------------------------1-----------------------------------------------------------------------------------------------------------------------------
+
+
+  /**
+  * Acceder a la pantalla de alerts, Frame & Windows
+  * @throws InterruptedException 
+  */
+  @Test(description = "AlertsFrameWindows_TC01 - Acceder a la pantalla de Alerts, Frame & Windows", enabled = false)
+  public void AlertsFrameWindows_TC01() throws InterruptedException {
+
+    
+    // Paso 1
+
+    // Acción
+    Utils.chromeDriver.get("https://demoqa.com/");
+    // Thread.sleep(3000);
+    
+
+    // Condición
+    if(Utils.chromeDriver.findElementsByXPath("//*[@id='app']/header/a/img").size() > 0 ||
+    Utils.chromeDriver.findElementsByXPath("//img[@class='banner-image' and @src=\"/images/WB.svg\"]").size() > 0 ||
+    Utils.chromeDriver.findElementsByXPath("//*[@id='app']/div/div/div[2]/div/div[1]").size() > 0 ||
+    Utils.chromeDriver.findElementsByXPath("//*[@id='app']/div/div/div[2]/div/div[2]").size() > 0 ||
+    Utils.chromeDriver.findElementsByXPath("//*[@id='app']/div/div/div[2]/div/div[3]").size() > 0 ||
+    Utils.chromeDriver.findElementsByXPath("//*[@id='app']/div/div/div[2]/div/div[4]").size() > 0 ||
+    Utils.chromeDriver.findElementsByXPath("//*[@id='app']/div/div/div[2]/div/div[5]").size() > 0 ||
+    Utils.chromeDriver.findElementsByXPath("//*[@id='app']/div/div/div[2]/div/div[6]").size() > 0);
+    {
+      System.out.println("Aparece el elemento");
+    }
+
+
+    // Paso 2
+
+    // Acción
+    Utils.chromeDriver.findElementByXPath("//*[@id='app']/div/div/div[2]/div/div[3]").click();
+    // Thread.sleep(1000);
+
+
+    // Condición
+    if(Utils.chromeDriver.findElementsByXPath("//span[@class='text' and text()='Browser Windows']").size() > 0 ||
+    Utils.chromeDriver.findElementsByXPath("//span[@class='text' and text()='Alerts']").size() > 0 ||
+    Utils.chromeDriver.findElementsByXPath("//span[@class='text' and text()='Frames']").size() > 0 ||
+    Utils.chromeDriver.findElementsByXPath("//li[@id='item-3' and contains(span[@class='text'], 'Nested Frames')]").size() > 0 ||
+    Utils.chromeDriver.findElementsByXPath("//span[@class='text' and text()='Modal Dialogs']").size() > 0 ||
+    Utils.chromeDriver.findElementsByXPath("//*[@id='app']/div/div/div/div[2]/text()").size() > 0){
+      System.out.println("Aparece el elemento");
+    }
+  }
+
+  
+// -------------------------------------------------------2-----------------------------------------------------------------------------------------------------------------------------
+
+
+  /**
+   * Verificar el funcionamiento de "Browser Windows" - Boton New Tab
+   * @throws InterruptedException 
+   */
+  @Test(description = "AlertsFrameWindows_TC02 - Verificar el funcionamiento de 'Browser Windows' - Boton New Tab", enabled = false)
+  public void AlertsFrameWindows_TC02() throws InterruptedException {
+
+    AlertsFrameWindows_TC01();
+
+    // Paso 1
+
+    // Acción
+    Utils.chromeDriver.findElementByXPath("//span[@class='text' and text()='Browser Windows']").click();
+    // Thread.sleep(1000);
+
+    // Condición
+    if(Utils.chromeDriver.findElementsByXPath("//*[@id='tabButton']").size() > 0 ||
+    Utils.chromeDriver.findElementsByXPath("//*[@id='windowButton']").size() > 0 ||
+    Utils.chromeDriver.findElementsByXPath("//*[@id='messageWindowButton']").size() > 0 ||
+    Utils.chromeDriver.findElementsByXPath("//*[@id='browserWindows']/h1").size() > 0);
+    {
+      System.out.println("Aparecen todos los elementos");
+    }
+
+
+    // Paso 2
+
+    // Acción
+    Utils.chromeDriver.findElementByXPath("//*[@id='tabButton']").click();
+    // Thread.sleep(1000);
+
+    // Condición
+    if(Utils.chromeDriver.findElementsByXPath("//*[@id='sampleHeading']").size() > 0){
+      System.out.println("Aparece el elemento");
+    }
+  }
+
+
+// -------------------------------------------------------3-----------------------------------------------------------------------------------------------------------------------------
+
+
+  /**
+   * Verificar el Funcionamiento de 'Bowser Windows'- Boton New Windows.
+   * @throws InterruptedException 
+   */
+  @Test(description = "AlertsFrameWindows_TC03 - Verificar el funcionamiento de 'Browser Windows' - Boton New Window", enabled = false)
+  public void AlertsFrameWindows_TC03() throws InterruptedException {
+
+    AlertsFrameWindows_TC01();
+
+    // Paso 1
+
+    // Acción
+    Utils.chromeDriver.findElementByXPath("//span[@class='text' and text()='Browser Windows']").click();
+    
+    Thread.sleep(1000);
+    // Condición
+    if(Utils.chromeDriver.findElementsByXPath("//*[@id='tabButton']").size() > 0 ||
+    Utils.chromeDriver.findElementsByXPath("//*[@id='windowButton']").size() > 0 ||
+    Utils.chromeDriver.findElementsByXPath("//*[@id='messageWindowButton']").size() > 0 ||
+    Utils.chromeDriver.findElementsByXPath("//*[@id='browserWindows']/h1").size() > 0);
+    {
+      System.out.println("Aparecen todos los elementos");
+    }
+    
+
+    // Paso 2
+
+    // Acción
+    Utils.chromeDriver.findElementByXPath("//*[@id='windowButton']").click();
+
+    Thread.sleep(1000);
+
+    // Condición
+    if(Utils.chromeDriver.findElementsByXPath("//*[@id='sampleHeading']").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("//html/body").size() > 0);
+    {
+      System.out.println("Aparecen todos los elementos");
+    }
+  } 
 
   // -------------------------------------------------------4-----------------------------------------------------------------------------------------------------------------------------
 
@@ -49,12 +184,11 @@ public class AlertsFrameWindows {
     @Test(description = "AlertsFrameWindows_TC04 - Verificar el funcionamiento de 'Browser Windows' - Boton New Window", enabled = false)
     public void AlertsFrameWindows_TC04() throws InterruptedException {
 
-      //AlertsFrameWindows_TC01();
+      AlertsFrameWindows_TC01();
 
       // Paso 1
+
       // Acción
-      Utils.chromeDriver.get("https://demoqa.com/");
-      Utils.chromeDriver.findElementByXPath("//div[@class='card mt-4 top-card' and .//h5[text()='Alerts, Frame & Windows']]").click();
       Utils.chromeDriver.findElementByXPath("//li[@class='btn btn-light ' and @id='item-0'][span[@class='text' and text()='Browser Windows']]").click();
       // Thread.sleep(5000);
       // Condición
@@ -66,6 +200,7 @@ public class AlertsFrameWindows {
       }
 
       // Paso 2
+
       // Acción
       Utils.chromeDriver.findElementByXPath("//*[@id='messageWindowButton']").click();
       // Thread.sleep(5000);
@@ -90,20 +225,19 @@ public class AlertsFrameWindows {
     @Test(description = "AlertsFrameWindows_TC05 - Verificar el funcionamiento de 'Alerts' - Alerta inmediata", enabled = false)
     public void AlertsFrameWindows_TC05() throws InterruptedException {
   
-      //AlertsFrameWindows_TC01();
+      AlertsFrameWindows_TC01();
   
       // Paso 1
+
       // Acción
-      Utils.chromeDriver.get("https://demoqa.com/");
-      Utils.chromeDriver.findElementByXPath("//div[@class='card mt-4 top-card' and .//h5[text()='Alerts, Frame & Windows']]").click();
       Utils.chromeDriver.findElementByXPath("//li[@class='btn btn-light ' and @id='item-1' and contains(span[@class='text'], 'Alerts')]").click();
-      Thread.sleep(5000);
+      // Thread.sleep(5000);
       
       // Condición
-      if(Utils.chromeDriver.findElementsByXPath("//*[@id='javascriptAlertsWrapper']/div[1]/div[1]/span").size() > 0 ||
-      Utils.chromeDriver.findElementsByXPath("//*[@id='javascriptAlertsWrapper']/div[2]/div[1]").size() > 0 ||
-      Utils.chromeDriver.findElementsByXPath("//*[@id='javascriptAlertsWrapper']/div[3]/div[1]/span").size() > 0 ||
-      Utils.chromeDriver.findElementsByXPath("//*[@id='javascriptAlertsWrapper']/div[4]/div[1]/span").size() > 0 ||
+      if(Utils.chromeDriver.findElementsByXPath("//span[@class='mr-3' and normalize-space(text())='Click Button to see alert']").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("//div[@class='col-md-6']/span[contains(@class, 'mr-3') and text()='On button click, alert will appear after 5 seconds']").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("//span[@class='mr-3' and normalize-space(text())='On button click, confirm box will appear']").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("//span[@class='mr-3' and normalize-space(text())='On button click, prompt box will appear']").size() > 0 ||
       Utils.chromeDriver.findElementsByXPath("//*[@id='alertButton']").size() > 0 ||
       Utils.chromeDriver.findElementsByXPath("//*[@id='timerAlertButton']").size() > 0 ||
       Utils.chromeDriver.findElementsByXPath("//[@id=//[@id='confirmButton']").size() > 0 ||
@@ -125,20 +259,19 @@ public class AlertsFrameWindows {
     @Test(description = "AlertsFrameWindows_TC06 - Verificar el funcionamiento de 'Alerts' - Alerta tras 5 segundos", enabled = false)
     public void AlertsFrameWindows_TC06() throws InterruptedException {
   
-      //AlertsFrameWindows_TC01();
+      AlertsFrameWindows_TC01();
   
       // Paso 1
+
       // Acción
-      Utils.chromeDriver.get("https://demoqa.com/");
-      Utils.chromeDriver.findElementByXPath("//*[@id='app']/div/div/div[2]/div/div[3]").click();
       Utils.chromeDriver.findElementByXPath("//li[@class='btn btn-light ' and @id='item-1' and contains(span[@class='text'], 'Alerts')]").click();
-      Thread.sleep(5000);
+      // Thread.sleep(5000);
       
       // Condición
-      if(Utils.chromeDriver.findElementsByXPath("//*[@id='javascriptAlertsWrapper']/div[1]/div[1]/span").size() > 0 ||
-      Utils.chromeDriver.findElementsByXPath("//*[@id='javascriptAlertsWrapper']/div[2]/div[1]").size() > 0 ||
-      Utils.chromeDriver.findElementsByXPath("//*[@id='javascriptAlertsWrapper']/div[3]/div[1]/span").size() > 0 ||
-      Utils.chromeDriver.findElementsByXPath("//*[@id='javascriptAlertsWrapper']/div[4]/div[1]/span").size() > 0 ||
+      if(Utils.chromeDriver.findElementsByXPath("//span[@class='mr-3' and normalize-space(text())='Click Button to see alert']").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("//div[@class='col-md-6']/span[contains(@class, 'mr-3') and text()='On button click, alert will appear after 5 seconds ']").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("//span[@class='mr-3' and normalize-space(text())='On button click, confirm box will appear']").size() > 0 ||
+      Utils.chromeDriver.findElementsByXPath("//span[@class='mr-3' and normalize-space(text())='On button click, prompt box will appear']").size() > 0 ||
       Utils.chromeDriver.findElementsByXPath("//*[@id='alertButton']").size() > 0 ||
       Utils.chromeDriver.findElementsByXPath("//*[@id='timerAlertButton']").size() > 0 ||
       Utils.chromeDriver.findElementsByXPath("//[@id=//[@id='confirmButton']").size() > 0 ||
@@ -160,12 +293,11 @@ public class AlertsFrameWindows {
     @Test(description = "AlertsFrameWindows_TC07 - Verificar el funcionamiento de 'Frames'", enabled = false)
     public void AlertsFrameWindows_TC07() throws InterruptedException {
 
-      //AlertsFrameWindows_TC01();
+      AlertsFrameWindows_TC01();
 
       // Paso 1
+
       // Acción
-      Utils.chromeDriver.get("https://demoqa.com/");
-      Utils.chromeDriver.findElementByXPath("//*[@id='app']/div/div/div[2]/div/div[3]").click();
       Utils.chromeDriver.findElementByXPath("//li[@id='item-2' and span[@class='text' and text()='Frames']]").click();
       //Thread.sleep(5000);
     
@@ -190,14 +322,13 @@ public class AlertsFrameWindows {
   @Test(description = "AlertsFrameWindows_TC08 - Verificar el funcionamiento de 'Nested Frames'", enabled = false)
     public void AlertsFrameWindows_TC08() throws InterruptedException {
 
-      //AlertsFrameWindows_TC01();
+      AlertsFrameWindows_TC01();
 
       // Paso 1
+
       // Acción
-      Utils.chromeDriver.get("https://demoqa.com/");
-      Utils.chromeDriver.findElementByXPath("//*[@id='app']/div/div/div[2]/div/div[3]").click();
       Utils.chromeDriver.findElementByXPath("//li[@id='item-3' and span[@class='text' and text()='Nested Frames']]").click();
-      Thread.sleep(5000);
+      // Thread.sleep(5000);
     
     // Condición
     if(Utils.chromeDriver.findElementsByXPath("/html/body/p").size() > 0 ||
@@ -207,11 +338,10 @@ public class AlertsFrameWindows {
     }
 
     // Paso 2
+
     // Acción
-      Utils.chromeDriver.get("https://demoqa.com/");
-      Utils.chromeDriver.findElementByXPath("//*[@id='app']/div/div/div[2]/div/div[3]").click();
       Utils.chromeDriver.findElementByXPath("//li[@id='item-3' and span[@class='text' and text()='Nested Frames']]").click();
-      Thread.sleep(5000);
+      // Thread.sleep(5000);
 
       // Condición
       if(Utils.chromeDriver.findElementsByXPath("/html/body/p").size() > 0 ||
@@ -233,14 +363,13 @@ public class AlertsFrameWindows {
   @Test(description = "AlertsFrameWindows_TC09 - Verificar el funcionamiento de 'Modal Dialogs'", enabled = false)
     public void AlertsFrameWindows_TC09() throws InterruptedException {
 
-      //AlertsFrameWindows_TC01();
+      AlertsFrameWindows_TC01();
 
       // Paso 1
+
       // Acción
-      Utils.chromeDriver.get("https://demoqa.com/");
-      Utils.chromeDriver.findElementByXPath("//*[@id='app']/div/div/div[2]/div/div[3]").click();
       Utils.chromeDriver.findElementByXPath("//li[contains(@class, 'btn') and contains(@class, 'btn-light') and span[text()='Modal Dialogs']]").click();
-      Thread.sleep(5000);
+      // Thread.sleep(5000);
     
     // Condición
     if(Utils.chromeDriver.findElementsByXPath("//*[@id='modalWrapper']/div/div").size() > 0 ||
@@ -251,13 +380,15 @@ public class AlertsFrameWindows {
     }
 
     // Paso 2
+    
     // Acción
     Utils.chromeDriver.findElementByXPath("//*[@id='showSmallModal']").click();
-    Thread.sleep(5000);
+    // Thread.sleep(5000);
 
     // Condición
-    if(Utils.chromeDriver.findElementsByXPath("//*[@id='example-modal-sizes-title-sm']").size() > 0 ||
-    Utils.chromeDriver.findElementsByXPath("/html/body/div[4]/div/div/div[2]").size() > 0){
+    if(Utils.chromeDriver.findElementsByXPath("//div[normalize-space(text())='Click on button to see modal']").size() > 0 ||
+    Utils.chromeDriver.findElementsByXPath("//*[@id='example-modal-sizes-title-sm']").size() > 0 ||
+    Utils.chromeDriver.findElementsByXPath("//div[@class='modal-body' and normalize-space(text())='This is a small modal. It has very less content']").size() > 0){
       System.out.println("No hay fallos!!");
     }
   }
@@ -274,14 +405,13 @@ public class AlertsFrameWindows {
   @Test(description = "AlertsFrameWindows_TC010 - Verificar el funcionamiento de 'Modal Dialogs'", enabled = false)
     public void AlertsFrameWindows_TC010() throws InterruptedException {
 
-      //AlertsFrameWindows_TC01();
+      AlertsFrameWindows_TC01();
 
       // Paso 1
+
       // Acción
-      Utils.chromeDriver.get("https://demoqa.com/");
-      Utils.chromeDriver.findElementByXPath("//*[@id='app']/div/div/div[2]/div/div[3]").click();
       Utils.chromeDriver.findElementByXPath("//li[contains(@class, 'btn') and contains(@class, 'btn-light') and span[text()='Modal Dialogs']]").click();
-      Thread.sleep(5000);
+      // Thread.sleep(5000);
     
     // Condición
     if(Utils.chromeDriver.findElementsByXPath("//*[@id='modalWrapper']/div/div").size() > 0 ||
@@ -292,13 +422,15 @@ public class AlertsFrameWindows {
     }
 
     // Paso 2
+
     // Acción
     Utils.chromeDriver.findElementByXPath("//Button[@id='showLargeModal']").click();
-    Thread.sleep(5000);
+    // Thread.sleep(5000);
 
     // Condición
     if(Utils.chromeDriver.findElementsByXPath("//*[@id='example-modal-sizes-title-lg']").size() > 0 ||
-    Utils.chromeDriver.findElementsByXPath("/html/body/div[4]/div/div/div[2]/p").size() > 0){
+    Utils.chromeDriver.findElementsByXPath("//div[normalize-space(text())='Click on button to see modal']").size() > 0 ||
+    Utils.chromeDriver.findElementsByXPath("//p[@class='']").size() > 0){
       System.out.println("No hay fallos!!");
     }
   }
