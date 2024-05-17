@@ -53,7 +53,7 @@ public class AlertsFrameWindows {
 
     // Acción
     Utils.chromeDriver.get("https://demoqa.com/");
-    // Thread.sleep(3000);
+    Thread.sleep(3000);
     
 
     // Condición
@@ -74,7 +74,7 @@ public class AlertsFrameWindows {
 
     // Acción
     Utils.chromeDriver.findElementByXPath("//*[@id='app']/div/div/div[2]/div/div[3]").click();
-    // Thread.sleep(1000);
+    Thread.sleep(3000);
 
 
     // Condición
@@ -105,7 +105,7 @@ public class AlertsFrameWindows {
 
     // Acción
     Utils.chromeDriver.findElementByXPath("//span[@class='text' and text()='Browser Windows']").click();
-    // Thread.sleep(1000);
+    Thread.sleep(3000);
 
     // Condición
     if(Utils.chromeDriver.findElementsByXPath("//*[@id='tabButton']").size() > 0 ||
@@ -121,7 +121,7 @@ public class AlertsFrameWindows {
 
     // Acción
     Utils.chromeDriver.findElementByXPath("//*[@id='tabButton']").click();
-    // Thread.sleep(1000);
+    Thread.sleep(3000);
 
     // Condición
     if(Utils.chromeDriver.findElementsByXPath("//*[@id='sampleHeading']").size() > 0){
@@ -146,8 +146,8 @@ public class AlertsFrameWindows {
 
     // Acción
     Utils.chromeDriver.findElementByXPath("//span[@class='text' and text()='Browser Windows']").click();
-    
-    Thread.sleep(1000);
+    Thread.sleep(3000);
+
     // Condición
     if(Utils.chromeDriver.findElementsByXPath("//*[@id='tabButton']").size() > 0 ||
     Utils.chromeDriver.findElementsByXPath("//*[@id='windowButton']").size() > 0 ||
@@ -162,8 +162,7 @@ public class AlertsFrameWindows {
 
     // Acción
     Utils.chromeDriver.findElementByXPath("//*[@id='windowButton']").click();
-
-    Thread.sleep(1000);
+    Thread.sleep(3000);
 
     // Condición
     if(Utils.chromeDriver.findElementsByXPath("//*[@id='sampleHeading']").size() > 0 ||
@@ -190,7 +189,8 @@ public class AlertsFrameWindows {
 
       // Acción
       Utils.chromeDriver.findElementByXPath("//li[@class='btn btn-light ' and @id='item-0'][span[@class='text' and text()='Browser Windows']]").click();
-      // Thread.sleep(5000);
+      Thread.sleep(3000);
+
       // Condición
       if(Utils.chromeDriver.findElementsByXPath("//*[@id='tabButton']").size() > 0 ||
       Utils.chromeDriver.findElementsByXPath("//*[@id='windowButton']").size() > 0 ||
@@ -203,7 +203,8 @@ public class AlertsFrameWindows {
 
       // Acción
       Utils.chromeDriver.findElementByXPath("//*[@id='messageWindowButton']").click();
-      // Thread.sleep(5000);
+    Thread.sleep(3000);
+
       // Condición
       if(Utils.chromeDriver.findElementsByXPath("/html/body/text()").size() > 0 ||
       Utils.chromeDriver.findElementsByXPath("//*[@id='windowButton']").size() > 0 ||
@@ -231,7 +232,7 @@ public class AlertsFrameWindows {
 
       // Acción
       Utils.chromeDriver.findElementByXPath("//li[@class='btn btn-light ' and @id='item-1' and contains(span[@class='text'], 'Alerts')]").click();
-      // Thread.sleep(5000);
+      Thread.sleep(3000);
       
       // Condición
       if(Utils.chromeDriver.findElementsByXPath("//span[@class='mr-3' and normalize-space(text())='Click Button to see alert']").size() > 0 ||
@@ -265,7 +266,7 @@ public class AlertsFrameWindows {
 
       // Acción
       Utils.chromeDriver.findElementByXPath("//li[@class='btn btn-light ' and @id='item-1' and contains(span[@class='text'], 'Alerts')]").click();
-      // Thread.sleep(5000);
+      Thread.sleep(3000);
       
       // Condición
       if(Utils.chromeDriver.findElementsByXPath("//span[@class='mr-3' and normalize-space(text())='Click Button to see alert']").size() > 0 ||
@@ -299,7 +300,7 @@ public class AlertsFrameWindows {
 
       // Acción
       Utils.chromeDriver.findElementByXPath("//li[@id='item-2' and span[@class='text' and text()='Frames']]").click();
-      //Thread.sleep(5000);
+      Thread.sleep(3000);
     
     // Condición
     if(Utils.chromeDriver.findElementsByXPath("//*[@id='framesWrapper']/div[1]").size() > 0 ||
@@ -328,7 +329,7 @@ public class AlertsFrameWindows {
 
       // Acción
       Utils.chromeDriver.findElementByXPath("//li[@id='item-3' and span[@class='text' and text()='Nested Frames']]").click();
-      // Thread.sleep(5000);
+      Thread.sleep(3000);
     
     // Condición
     if(Utils.chromeDriver.findElementsByXPath("/html/body/p").size() > 0 ||
@@ -341,7 +342,7 @@ public class AlertsFrameWindows {
 
     // Acción
       Utils.chromeDriver.findElementByXPath("//li[@id='item-3' and span[@class='text' and text()='Nested Frames']]").click();
-      // Thread.sleep(5000);
+      Thread.sleep(3000);
 
       // Condición
       if(Utils.chromeDriver.findElementsByXPath("/html/body/p").size() > 0 ||
@@ -369,7 +370,7 @@ public class AlertsFrameWindows {
 
       // Acción
       Utils.chromeDriver.findElementByXPath("//li[contains(@class, 'btn') and contains(@class, 'btn-light') and span[text()='Modal Dialogs']]").click();
-      // Thread.sleep(5000);
+      Thread.sleep(3000);
     
     // Condición
     if(Utils.chromeDriver.findElementsByXPath("//*[@id='modalWrapper']/div/div").size() > 0 ||
@@ -383,7 +384,7 @@ public class AlertsFrameWindows {
     
     // Acción
     Utils.chromeDriver.findElementByXPath("//*[@id='showSmallModal']").click();
-    // Thread.sleep(5000);
+    Thread.sleep(3000);
 
     // Condición
     if(Utils.chromeDriver.findElementsByXPath("//div[normalize-space(text())='Click on button to see modal']").size() > 0 ||
@@ -411,7 +412,7 @@ public class AlertsFrameWindows {
 
       // Acción
       Utils.chromeDriver.findElementByXPath("//li[contains(@class, 'btn') and contains(@class, 'btn-light') and span[text()='Modal Dialogs']]").click();
-      // Thread.sleep(5000);
+      Thread.sleep(3000);
     
     // Condición
     if(Utils.chromeDriver.findElementsByXPath("//*[@id='modalWrapper']/div/div").size() > 0 ||
@@ -425,7 +426,7 @@ public class AlertsFrameWindows {
 
     // Acción
     Utils.chromeDriver.findElementByXPath("//Button[@id='showLargeModal']").click();
-    // Thread.sleep(5000);
+    Thread.sleep(3000);
 
     // Condición
     if(Utils.chromeDriver.findElementsByXPath("//*[@id='example-modal-sizes-title-lg']").size() > 0 ||

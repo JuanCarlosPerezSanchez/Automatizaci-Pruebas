@@ -69,6 +69,7 @@ public class Elements {
 
     // Acción
     Utils.chromeDriver.findElementByXPath("//h5[contains(text(),'Elements')]/parent::div").click();
+    Thread.sleep(3000);
     // Condición
     if(Utils.chromeDriver.findElementsByXPath("//*[@id='app']/div/div/div/div[1]/div/div/div[1]/span/div/div[1]").size() > 0 ||
     Utils.chromeDriver.findElementsByXPath("//*[@id='app']/div/div/div/div[1]/div/div/div[2]/span/div/div[1]").size() > 0 ||
@@ -96,7 +97,7 @@ public class Elements {
 
     // Acción
     Utils.chromeDriver.findElementByXPath("//li[contains(span/text(), 'Text Box')]").click();
-    Thread.sleep(1000);
+    Thread.sleep(3000);
 
 
     // Condición
@@ -117,6 +118,8 @@ public class Elements {
     Utils.chromeDriver.findElementByXPath("//*[@id='userEmail']").sendKeys("antonio@pepephone.com");
     Utils.chromeDriver.findElementByXPath("//*[@id='currentAddress']").sendKeys("calle agustina 85");
     Utils.chromeDriver.findElementByXPath("//*[@id='permanentAddress']").sendKeys("Av de las letras 42");
+    Thread.sleep(3000);
+
     WebElement botonSubmit = Utils.chromeDriver.findElementByXPath("//button[contains(@id,'submit')]");
     JavascriptExecutor js = (JavascriptExecutor) Utils.chromeDriver;
     js.executeScript("arguments[0].scrollIntoView(true);", botonSubmit);
@@ -125,6 +128,7 @@ public class Elements {
     Thread.sleep(1000);
 
     Utils.chromeDriver.findElementByXPath("//button[contains(@id,'submit')]").click();
+    Thread.sleep(3000);
     
     // Condición
     if(Utils.chromeDriver.findElementByXPath("//p[contains(@id,'name')]").getText().contains("Antonio") ||
@@ -152,6 +156,7 @@ public class Elements {
 
     // Acción
     Utils.chromeDriver.findElementByXPath("//li[@id='item-1']/span[@class='text' and text()='Check Box']").click();
+    Thread.sleep(3000);
 
     // Condición
     if(Utils.chromeDriver.findElementsByXPath("//h1").size() > 0 ||
@@ -166,6 +171,8 @@ public class Elements {
 
     // Acción
     Utils.chromeDriver.findElementByXPath("//*[@id='tree-node']/ol/li/span/label/span[1]").click();
+    Thread.sleep(3000);
+
     // Condición
     if (Utils.chromeDriver.findElementsByXPath("//*[@id='result']").size() > 0 ||
     Utils.chromeDriver.findElementsByXPath("//span[@class='rct-checkbox']").size() > 0) {
@@ -190,6 +197,7 @@ public class Elements {
 
     // Acción
     Utils.chromeDriver.findElementByXPath("//li[@id='item-1']/span[@class='text' and text()='Check Box']").click();
+    Thread.sleep(3000);
     
     // Condición
     if(Utils.chromeDriver.findElementsByXPath("//h1").size() > 0 ||
@@ -205,6 +213,7 @@ public class Elements {
 
     // Acción
     Utils.chromeDriver.findElementByXPath("//button[@class='rct-option rct-option-expand-all']").click();
+    Thread.sleep(3000);
 
     // Condición
     if(Utils.chromeDriver.findElementsByXPath("//h1").size() > 0){
@@ -216,6 +225,8 @@ public class Elements {
 
     // Accion
     Utils.chromeDriver.findElementByXPath("//*[@id='tree-node']/ol/li/ol/li[1]/span/label/span[1]").click();
+    Thread.sleep(2000);
+
     // Condicion
     
   }
@@ -238,6 +249,7 @@ public class Elements {
     // Acción
     Utils.chromeDriver.findElementByXPath("//*[@id='app']/div/div/div/div[1]/div/div/div[1]/span/div").click();
     Utils.chromeDriver.findElementByXPath("//li[@id='item-1']/span[@class='text' and text()='Check Box']").click();
+    Thread.sleep(3000);
     
     // Condición
     if(Utils.chromeDriver.findElementsByXPath("//h1").size() > 0 ||
@@ -253,6 +265,7 @@ public class Elements {
 
     // Acción
     Utils.chromeDriver.findElementByXPath("//button[@class='rct-option rct-option-expand-all']").click();
+    Thread.sleep(3000);
 
     // Condición
     if(Utils.chromeDriver.findElementsByXPath("//h1").size() > 0){
@@ -262,6 +275,8 @@ public class Elements {
 
     // Accion
     Utils.chromeDriver.findElementByXPath("//*[@id='tree-node']/ol/li/ol/li[2]/span/label/span[1]").click();
+    Thread.sleep(3000);
+
     // Condicion
     if ((Utils.chromeDriver.findElementsByXPath("//*[@id='tree-node']/ol/li/span").size() > 0 ||
     Utils.chromeDriver.findElementsByXPath("//*[@id='tree-node']/ol/li/ol/li[2]/span").size() > 0 ||
@@ -297,6 +312,7 @@ public class Elements {
     // Acción
     Utils.chromeDriver.findElementByXPath("//*[@id='app']/div/div/div/div[1]/div/div/div[1]/span/div").click();
     Utils.chromeDriver.findElementByXPath("//li[@id='item-1']/span[@class='text' and text()='Check Box']").click();
+    Thread.sleep(3000);
     
     // Condición
     if(Utils.chromeDriver.findElementsByXPath("//h1").size() > 0 ||
@@ -312,6 +328,7 @@ public class Elements {
 
     // Acción
     Utils.chromeDriver.findElementByXPath("//button[@class='rct-option rct-option-expand-all']").click();
+    Thread.sleep(3000);
 
     // Condición
     if(Utils.chromeDriver.findElementsByXPath("//h1").size() > 0){
@@ -326,7 +343,11 @@ public class Elements {
     js.executeScript("arguments[0].scrollIntoView(true);", botonSubmit);
     Actions actions = new Actions(Utils.chromeDriver);
     actions.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).perform();
+    Thread.sleep(1000);
+
     Utils.chromeDriver.findElementByXPath("//*[@id='tree-node']/ol/li/ol/li[2]/ol/li[2]/span/label/span[1]").click();
+    Thread.sleep(1000);
+
     // Condición
   }
 
@@ -348,6 +369,7 @@ public class Elements {
     // Acción
     Utils.chromeDriver.findElementByXPath("//*[@id='app']/div/div/div/div[1]/div/div/div[1]/span/div").click();
     Utils.chromeDriver.findElementByXPath("//li[@id='item-1']/span[@class='text' and text()='Check Box']").click();
+    Thread.sleep(3000);
     
     // Condición
     if(Utils.chromeDriver.findElementsByXPath("//h1").size() > 0 ||
@@ -363,6 +385,7 @@ public class Elements {
 
     // Acción
     Utils.chromeDriver.findElementByXPath("//button[@class='rct-option rct-option-expand-all']").click();
+    Thread.sleep(3000);
 
     // Condición
     if(Utils.chromeDriver.findElementsByXPath("//h1").size() > 0){
@@ -377,7 +400,10 @@ public class Elements {
     js.executeScript("arguments[0].scrollIntoView(true);", botonSubmit);
     Actions actions = new Actions(Utils.chromeDriver);
     actions.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).perform();
+    Thread.sleep(1000);
+
     Utils.chromeDriver.findElementByXPath("//*[@id='tree-node']/ol/li/ol/li[3]/span/label/span[1]").click();
+    Thread.sleep(1000);
 
     // Condición
     
@@ -400,6 +426,7 @@ public class Elements {
 
     // Acción
     Utils.chromeDriver.findElementByXPath("//span[@class='text' and text()='Radio Button']").click();
+    Thread.sleep(3000);
 
     // Condición
     if (Utils.chromeDriver.findElementsByXPath("//*[@id='app']/div/div/div/div[2]/h1").size() > 0 ||
@@ -415,6 +442,7 @@ public class Elements {
 
     // Acción
     Utils.chromeDriver.findElementByXPath("//*[@id='app']/div/div/div/div[2]/div[2]/div[2]").click();
+    Thread.sleep(3000);
 
     // Condición
     if (Utils.chromeDriver.findElementsByXPath("//*[@id='app']/div/div/div/div[2]/h1").size() > 0 ||
@@ -439,6 +467,7 @@ public class Elements {
 
     // Acción
     Utils.chromeDriver.findElementByXPath("//li[@class='btn btn-light ' and @id='item-3']/span[text()='Web Tables']").click();
+    Thread.sleep(3000);
 
     // Condición
     if (Utils.chromeDriver.findElementsByXPath("//*[@id='addNewRecordButton']").size() > 0 ||
@@ -467,6 +496,7 @@ public class Elements {
     Utils.chromeDriver.findElementByXPath("//*[@id='salary']").sendKeys("15000");
     Utils.chromeDriver.findElementByXPath("//*[@id='department']").clear();
     Utils.chromeDriver.findElementByXPath("//*[@id='department']").sendKeys("Gaming");
+    Thread.sleep(3000);
 
     // Condición
 
@@ -483,6 +513,7 @@ public class Elements {
 
     // Acción
     Utils.chromeDriver.findElementByXPath("//*[@id='submit']").click();
+    Thread.sleep(3000);
 
     // Condición
     if (Utils.chromeDriver.findElementsByXPath("//div[@class='rt-td' and text()='Manuel']").size() > 0 ){
@@ -507,6 +538,8 @@ public class Elements {
 
     // Acción
     Utils.chromeDriver.findElementByXPath("//li[@class='btn btn-light ' and @id='item-3']/span[text()='Web Tables']").click();
+    Thread.sleep(3000);
+
     // Condición
     if (Utils.chromeDriver.findElementsByXPath("//*[@id='addNewRecordButton']").size() > 0 ||
     Utils.chromeDriver.findElementsByXPath("//li[@class='btn btn-light active' and @id='item-3']").size() > 0 ||
@@ -534,6 +567,7 @@ public class Elements {
     Utils.chromeDriver.findElementByXPath("//*[@id='salary']").sendKeys("1500");
     Utils.chromeDriver.findElementByXPath("//*[@id='department']").clear();
     Utils.chromeDriver.findElementByXPath("//*[@id='department']").sendKeys("Programing");
+    Thread.sleep(3000);
 
     
 
@@ -552,6 +586,7 @@ public class Elements {
 
     // Acción
     Utils.chromeDriver.findElementByXPath("//*[@id='submit']").click();
+    Thread.sleep(3000);
 
     // Condición
     if (Utils.chromeDriver.findElementsByXPath("//div[@class='rt-tr' and @role='row']").size() > 0 ||
@@ -577,6 +612,7 @@ public class Elements {
 
     // Acción
     Utils.chromeDriver.findElementByXPath("//li[@class='btn btn-light ' and @id='item-3']/span[text()='Web Tables']").click();
+    Thread.sleep(3000);
 
     // Condición
     if (Utils.chromeDriver.findElementsByXPath("//*[@id='addNewRecordButton']").size() > 0 ||
@@ -605,7 +641,8 @@ public class Elements {
     Utils.chromeDriver.findElementByXPath("//*[@id='salary']").sendKeys("12000");
     Utils.chromeDriver.findElementByXPath("//*[@id='department']").clear();
     Utils.chromeDriver.findElementByXPath("//*[@id='department']").sendKeys("Compilace");
-    
+    Thread.sleep(3000);
+
     // Condición
     if(Utils.chromeDriver.findElementByXPath("//input[@value='Alden']").getText().contains("Alden")  ||
     Utils.chromeDriver.findElementByXPath("//input[@value='Cantrell']").getText().contains("Cantrell")||
@@ -620,6 +657,7 @@ public class Elements {
 
     // Acción
     Utils.chromeDriver.findElementByXPath("//*[@id='submit']").click();
+    Thread.sleep(3000);
 
     // Condición
     if (Utils.chromeDriver.findElementsByXPath("//div[@class='ReactTable -striped -highlight']").size() > 0 ||
@@ -645,6 +683,7 @@ public class Elements {
 
     // Acción
     Utils.chromeDriver.findElementByXPath("//li[@class='btn btn-light ' and @id='item-3']/span[text()='Web Tables']").click();
+    Thread.sleep(3000);
 
     // Condición
     if (Utils.chromeDriver.findElementsByXPath("//*[@id='addNewRecordButton']").size() > 0 ||
@@ -673,7 +712,8 @@ public class Elements {
     Utils.chromeDriver.findElementByXPath("//*[@id='salary']").sendKeys("2000");
     Utils.chromeDriver.findElementByXPath("//*[@id='department']").clear();
     Utils.chromeDriver.findElementByXPath("//*[@id='department']").sendKeys("Legal");
-    
+    Thread.sleep(3000);
+
     // Condición
     if(Utils.chromeDriver.findElementByXPath("//input[@value='Kierra']").getText().contains("Kierra")  ||
     Utils.chromeDriver.findElementByXPath("//input[@value='Gentry']").getText().contains("Gentry")||
@@ -688,6 +728,7 @@ public class Elements {
 
     // Acción
     Utils.chromeDriver.findElementByXPath("//*[@id='submit']").click();
+    Thread.sleep(3000);
 
     // Condición
     if (Utils.chromeDriver.findElementsByXPath("//div[@class='ReactTable -striped -highlight']").size() > 0 ||
@@ -714,6 +755,7 @@ public class Elements {
 
     // Acción
     Utils.chromeDriver.findElementByXPath("//*[@id='searchBox']").click();
+    Thread.sleep(3000);
 
     // Condición
     if (Utils.chromeDriver.findElementsByXPath("//*[@id='searchBox']").size() > 0){
@@ -725,6 +767,7 @@ public class Elements {
     // Acción
     Utils.chromeDriver.findElementByXPath("//*[@id='searchBox']").sendKeys("Jose");
     Utils.chromeDriver.findElementByXPath("//*[@id='basic-addon2']").click();
+    Thread.sleep(3000);
 
     // Condición
     if (Utils.chromeDriver.findElementsByXPath("//div[@class='rt-td' and text()='Jose']").size() > 0){
@@ -749,7 +792,7 @@ public class Elements {
 
     // Acción
     Utils.chromeDriver.findElementByXPath("//li[contains(@id,'item-')]/span[contains(text(),'Text Box')]").click();
-    Thread.sleep(1000);
+    Thread.sleep(3000);
 
     // Condición
     if(Utils.chromeDriver.findElementsByXPath("//input[contains(@id,'userName')]").size() > 0){
@@ -761,7 +804,7 @@ public class Elements {
 
     // Acción
     Utils.chromeDriver.findElementByXPath("//li[@class='btn btn-light ' and @id='item-4']/span[text()='Buttons']").click();
-    // Thread.sleep(1000);
+    Thread.sleep(3000);
 
     // Condición
     if(Utils.chromeDriver.findElementByXPath("//button[@id='doubleClickBtn']").getText().contains("Antonio")){

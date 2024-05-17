@@ -62,7 +62,7 @@ public class Widgets {
 
     // Acción
     Utils.chromeDriver.get("https://demoqa.com/");
-    // Thread.sleep(3000);
+    Thread.sleep(3000);
 
     // Condición
     if(Utils.chromeDriver.findElementsByXPath("//img[@src='/images/Toolsqa.jpg']").size() > 0 ||
@@ -77,7 +77,8 @@ public class Widgets {
       System.out.println("No hay fallos!!");
     }
     
-     // Paso 2
+    // Paso 2
+
     // Acción
     Utils.chromeDriver.findElementByXPath("//div[@class='card mt-4 top-card']//h5[text()='Widgets']").click();
     Thread.sleep(3000);
@@ -109,53 +110,54 @@ public class Widgets {
 
     Widgets_TC01();
 
-     // Paso 1
+    // Paso 1
 
-     // Acción
-     Utils.chromeDriver.findElementByXPath("//li[@id='item-0' and contains(@class, 'btn') and contains(@class, 'btn-light') and span[text()='Accordian']]").click();
+    // Acción
+    Utils.chromeDriver.findElementByXPath("//li[@id='item-0' and contains(@class, 'btn') and contains(@class, 'btn-light') and span[text()='Accordian']]").click();
+    Thread.sleep(3000);
 
-     // Condición
-     if(Utils.chromeDriver.findElementsByXPath("//*[@id='accordianContainer']/div").size() > 0 ||
-     Utils.chromeDriver.findElementsByXPath("//*[@id='section1Heading']").size() > 0 ||
-     Utils.chromeDriver.findElementsByXPath("//*[@id='section2Heading']").size() > 0 ||
-     Utils.chromeDriver.findElementsByXPath("//*[@id='section3Heading']").size() > 0 ||
-     Utils.chromeDriver.findElementsByXPath("//*[@id='accordianContainer']/h1").size() > 0 ||
-     Utils.chromeDriver.findElementsByXPath("//li[@id='item-0' and contains(@class, 'btn') and contains(@class, 'btn-light') and contains(@class, 'active') and span[text()='Accordian']]").size() > 0){
+    // Condición
+    if(Utils.chromeDriver.findElementsByXPath("//*[@id='accordianContainer']/div").size() > 0 ||
+    Utils.chromeDriver.findElementsByXPath("//*[@id='section1Heading']").size() > 0 ||
+    Utils.chromeDriver.findElementsByXPath("//*[@id='section2Heading']").size() > 0 ||
+    Utils.chromeDriver.findElementsByXPath("//*[@id='section3Heading']").size() > 0 ||
+    Utils.chromeDriver.findElementsByXPath("//*[@id='accordianContainer']/h1").size() > 0 ||
+    Utils.chromeDriver.findElementsByXPath("//li[@id='item-0' and contains(@class, 'btn') and contains(@class, 'btn-light') and contains(@class, 'active') and span[text()='Accordian']]").size() > 0){
       System.out.println("No hay fallos!!");
     }
      
-      // Paso 2
-     // Acción
-     Utils.chromeDriver.findElementByXPath("//*[@id='accordianContainer']/div/div[1]").click();
-    //  Thread.sleep(5000);
+    // Paso 2
+
+    // Acción
+    Utils.chromeDriver.findElementByXPath("//*[@id='accordianContainer']/div/div[1]").click();
+    Thread.sleep(3000);
  
-     // Condición
-     if(Utils.chromeDriver.findElementsByXPath("//*[@id='section1Content']/p").size() > 0){
+    // Condición
+    if(Utils.chromeDriver.findElementsByXPath("//*[@id='section1Content']/p").size() > 0){
       System.out.println("No hay fallos!!");
     }
 
-     // Acción
-     Utils.chromeDriver.findElementByXPath("//*[@id='section2Heading']").click();
-    //  Thread.sleep(3000);
+    // Acción
+    WebElement Accordian = Utils.chromeDriver.findElementByXPath("//*[@id='section3Heading']");
+    JavascriptExecutor js = (JavascriptExecutor) Utils.chromeDriver;
+    js.executeScript("arguments[0].scrollIntoView(true);", Accordian);
+    Actions actions = new Actions(Utils.chromeDriver);
+    actions.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).perform();
+
+    Utils.chromeDriver.findElementByXPath("//*[@id='section2Heading']").click();
+    Thread.sleep(3000);
  
-     // Condición
-     if(Utils.chromeDriver.findElementsByXPath("//*[@id='section2Content']").size() > 0){
+    // Condición
+    if(Utils.chromeDriver.findElementsByXPath("//*[@id='section2Content']").size() > 0){
       System.out.println("No hay fallos!!");
     }
 
-     // Acción
-
-     WebElement Accordian = Utils.chromeDriver.findElementByXPath("//*[@id='section3Heading']");
-     JavascriptExecutor js = (JavascriptExecutor) Utils.chromeDriver;
-     js.executeScript("arguments[0].scrollIntoView(true);", Accordian);
-     Actions actions = new Actions(Utils.chromeDriver);
-     actions.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).perform();
-
-     Utils.chromeDriver.findElementByXPath("//*[@id='section3Heading']").click();
-     System.out.println("No hay fallos!!");
+    // Acción
+    Utils.chromeDriver.findElementByXPath("//*[@id='section3Heading']").click();
+    Thread.sleep(3000);
  
-     // Condición
-     if(Utils.chromeDriver.findElementsByXPath("//*[@id='section3Content']/p").size() > 0){
+    // Condición
+    if(Utils.chromeDriver.findElementsByXPath("//*[@id='section3Content']/p").size() > 0){
       System.out.println("No hay fallos!!");
     }
   }
@@ -178,7 +180,7 @@ public class Widgets {
 
       // Acción
       Utils.chromeDriver.findElementByXPath("(//li[contains(@id,'item-')]//span[@class='text' and text()='Auto Complete'])").click();
-      // Thread.sleep(5000);
+      Thread.sleep(3000);
 
       // Condición
       if(Utils.chromeDriver.findElementsByXPath("//span[@class='text'][text()='Auto Complete']").size()  > 0 ||
@@ -194,12 +196,13 @@ public class Widgets {
     // Acción
     Utils.chromeDriver.findElementByXPath("//input[@id='autoCompleteMultipleInput']").click();
     Utils.chromeDriver.findElement(By.xpath("//input[@id='autoCompleteMultipleInput']")).sendKeys("Red");
-    Utils.chromeDriver.findElementByXPath("//input[@id='autoCompleteMultipleInput']").click();
+    Utils.chromeDriver.findElementByXPath("//*[@id='autoCompleteSingleContainer']/div/div[1]").click();
     Utils.chromeDriver.findElement(By.xpath("//input[@id='autoCompleteMultipleInput']")).sendKeys("Black");
+    Thread.sleep(3000);
      
-     // Condición
-     if(Utils.chromeDriver.findElementsByXPath("//div[@class='auto-complete__value-container css-1hwfws3']").size() > 0 ||
-     Utils.chromeDriver.findElementsByXPath("//span[text()='Type single color name']").size() > 0){
+    // Condición
+    if(Utils.chromeDriver.findElementsByXPath("//div[@class='auto-complete__value-container css-1hwfws3']").size() > 0 ||
+    Utils.chromeDriver.findElementsByXPath("//span[text()='Type single color name']").size() > 0){
       System.out.println("No hay fallos!!");
     }
     //Acción
@@ -223,7 +226,7 @@ public class Widgets {
     
     //Acción
     Utils.chromeDriver.findElementByXPath("//li[contains(@class, 'btn btn-light') and @id='item-2' and span[text()='Date Picker']]").click();
-    // Thread.sleep(5000);
+    Thread.sleep(3000);
 
     //Condición
     if(Utils.chromeDriver.findElementsByXPath("//input[@id='datePickerMonthYearInput' and @class='react-datepicker-ignore-onclickoutside']").size() > 0 ||
@@ -238,7 +241,7 @@ public class Widgets {
     
     //Acción
     Utils.chromeDriver.findElementByXPath("//*[@id='datePickerMonthYearInput']").click();
-    // Thread.sleep(5000);
+    Thread.sleep(3000);
     
     //Condición
     if(Utils.chromeDriver.findElementsByXPath("//*[@id='datePickerMonthYear']/div[2]/div[2]").size() > 0)
@@ -249,7 +252,7 @@ public class Widgets {
     //Acción
     Utils.chromeDriver.findElementByXPath("//*[@id='datePickerContainer']/h1").click();
     Utils.chromeDriver.findElementByXPath("//*[@id='dateAndTimePickerInput']").click();
-    // Thread.sleep(5000);
+    Thread.sleep(3000);
     
     //Condición
     if(Utils.chromeDriver.findElementsByXPath("//div[@class='react-datepicker__month-container']").size() > 0 ||
@@ -276,7 +279,7 @@ public class Widgets {
 
     //Acción
     Utils.chromeDriver.findElementByXPath("//li[@id='item-3' and span[@class='text' and text()='Slider']]").click();
-    // Thread.sleep(5000);
+    Thread.sleep(3000);
 
     //Condición
     if(Utils.chromeDriver.findElementsByXPath("//*[@id='sliderContainer']/div[1]/span").size() > 0 ||
@@ -291,7 +294,7 @@ public class Widgets {
     
     //Acción
     Utils.chromeDriver.findElementByXPath("//*[@id='sliderContainer']/div[1]/span").click();
-    // Thread.sleep(5000);
+    Thread.sleep(3000);
 
     //Condición
 
@@ -346,10 +349,10 @@ public class Widgets {
     js.executeScript("arguments[0].scrollIntoView(true);", ProgressBar);
     Actions actions = new Actions(Utils.chromeDriver);
     actions.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).perform();
-    // Thread.sleep(5000);
+    Thread.sleep(3000);
 
     Utils.chromeDriver.findElementByXPath("//li[@id='item-4' and span[@class='text' and text()='Progress Bar']]").click();
-    // Thread.sleep(5000);
+    Thread.sleep(3000);
 
     //Condición
     if(Utils.chromeDriver.findElementsByXPath("//*[@id='progressBarContainer']/h1").size() > 0 ||
@@ -365,7 +368,7 @@ public class Widgets {
     
     //Acción
     Utils.chromeDriver.findElementByXPath("//*[@id='startStopButton']").click();
-    // Thread.sleep(5000);
+    Thread.sleep(3000);
 
     //Condición
     if(Utils.chromeDriver.findElementsByXPath("//*[@id='progressBar']/div").size() > 0 ||
@@ -378,7 +381,7 @@ public class Widgets {
     
     //Acción
     Utils.chromeDriver.findElementByXPath("//*[@id='startStopButton']").click();
-    // Thread.sleep(5000);
+    Thread.sleep(3000);
 
     //Condición
     if(Utils.chromeDriver.findElementsByXPath("//*[@id='startStopButton']").size() > 0)
@@ -403,16 +406,15 @@ public class Widgets {
     //Paso 1
     
     //Acción
-
     WebElement Tabs = Utils.chromeDriver.findElementByXPath("//li[@id='item-5' and span[@class='text' and text()='Tabs']]");
     JavascriptExecutor js = (JavascriptExecutor) Utils.chromeDriver;
     js.executeScript("arguments[0].scrollIntoView(true);", Tabs);
     Actions actions = new Actions(Utils.chromeDriver);
     actions.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).perform();
-    // Thread.sleep(5000);
+    Thread.sleep(3000);
 
     Utils.chromeDriver.findElementByXPath("//li[@id='item-5' and span[@class='text' and text()='Tabs']]").click();
-    // Thread.sleep(5000);
+    Thread.sleep(3000);
 
     //Condición
     if(Utils.chromeDriver.findElementsByXPath("//*[@id='tabsContainer']/h1").size() > 0 ||
@@ -430,7 +432,7 @@ public class Widgets {
     
     //Acción
     Utils.chromeDriver.findElementByXPath("//*[@id='demo-tab-origin']").click();
-    // Thread.sleep(5000);
+    Thread.sleep(3000);
 
     //Condición
     if(Utils.chromeDriver.findElementsByXPath("//*[@id='tabsContainer']/div[2]").size() > 0)
@@ -455,16 +457,15 @@ public class Widgets {
     //Paso 1
 
     //Acción
-
     WebElement Tabs = Utils.chromeDriver.findElementByXPath("//li[@id='item-5' and span[@class='text' and text()='Tabs']]");
     JavascriptExecutor js = (JavascriptExecutor) Utils.chromeDriver;
     js.executeScript("arguments[0].scrollIntoView(true);", Tabs);
     Actions actions = new Actions(Utils.chromeDriver);
     actions.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).perform();
-    // Thread.sleep(5000);
+    Thread.sleep(3000);
 
     Utils.chromeDriver.findElementByXPath("//li[@id='item-6' and span[@class='text' and text()='Tool Tips']]").click();
-    // Thread.sleep(5000);
+    Thread.sleep(3000);
 
     //Condición
     if(Utils.chromeDriver.findElementsByXPath("//*[@id='toopTipContainer']/h1").size() > 0 ||
@@ -479,11 +480,10 @@ public class Widgets {
     //Paso 2
     
     //Acción
-
     WebElement elmento = Utils.chromeDriver.findElement(By.xpath("//*[@id='toolTipButton']"));
     Actions actions2 = new Actions(Utils.chromeDriver);
     actions2.moveToElement(elmento).perform();
-
+    Thread.sleep(3000);
     
     //Condición
     if(Utils.chromeDriver.findElementsByXPath("//button[@id='toolTipButton' and @aria-describedby='buttonToolTip']").size() > 0)
@@ -492,10 +492,10 @@ public class Widgets {
     }
 
     //Acción
-    
     WebElement elmento1 = Utils.chromeDriver.findElement(By.xpath("//*[@id='toolTipTextField']"));
     Actions actions3 = new Actions(Utils.chromeDriver);
     actions3.moveToElement(elmento1).perform();
+    Thread.sleep(3000);
 
     //Condición
     if(Utils.chromeDriver.findElementsByXPath("//input[@id='toolTipTextField' and @aria-describedby='textFieldToolTip']").size() > 0)
@@ -503,11 +503,11 @@ public class Widgets {
       System.out.println("No hay fallos!!");
     }
 
-    //Acción
-    
+    //Acción    
     WebElement elmento2 = Utils.chromeDriver.findElement(By.xpath("//*[@id='texToolTopContainer']/a[1]"));
     Actions actions4 = new Actions(Utils.chromeDriver);
     actions4.moveToElement(elmento2).perform();
+    Thread.sleep(3000);
 
     //Condición
     if(Utils.chromeDriver.findElementsByXPath("//a[@aria-describedby='contraryTexToolTip']").size() > 0)
@@ -532,16 +532,15 @@ public class Widgets {
     //Paso 1
     
     //Acción
-
     WebElement Menu = Utils.chromeDriver.findElementByXPath("//li[@id='item-7' and span[@class='text' and text()='Menu']]");
     JavascriptExecutor js = (JavascriptExecutor) Utils.chromeDriver;
     js.executeScript("arguments[0].scrollIntoView(true);", Menu);
     Actions actions = new Actions(Utils.chromeDriver);
     actions.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).perform();
-    // Thread.sleep(5000);
+    Thread.sleep(3000);
 
     Utils.chromeDriver.findElementByXPath("//li[@id='item-7' and span[@class='text' and text()='Menu']]").click();
-    // Thread.sleep(5000);
+    Thread.sleep(3000);
 
     //Condición
     if(Utils.chromeDriver.findElementsByXPath("//h1[text()='Menu']").size() > 0 ||
@@ -554,11 +553,10 @@ public class Widgets {
     //Paso 2
     
     //Acción
-
     WebElement elmento3 = Utils.chromeDriver.findElement(By.xpath("//*[@id='nav']/li[1]/a"));
     Actions actions5 = new Actions(Utils.chromeDriver);
     actions5.moveToElement(elmento3).perform();
-    // Thread.sleep(5000);
+    Thread.sleep(3000);
 
     //Condición
     if(Utils.chromeDriver.findElementsByXPath("//*[@id='nav']/li[1]/a").size() > 0)
@@ -583,16 +581,15 @@ public class Widgets {
     //Paso 1
     
     //Acción
-
     WebElement Menu = Utils.chromeDriver.findElementByXPath("//li[@id='item-7' and span[@class='text' and text()='Menu']]");
     JavascriptExecutor js = (JavascriptExecutor) Utils.chromeDriver;
     js.executeScript("arguments[0].scrollIntoView(true);", Menu);
     Actions actions = new Actions(Utils.chromeDriver);
     actions.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).perform();
-    // Thread.sleep(5000);
+    Thread.sleep(3000);
 
     Utils.chromeDriver.findElementByXPath("//li[@class='btn btn-light ' and span/text()='Menu']").click();
-    // Thread.sleep(5000);
+    Thread.sleep(3000);
 
     //Condición
     if(Utils.chromeDriver.findElementsByXPath("//h1[text()='Menu']").size() > 0 ||
@@ -605,11 +602,10 @@ public class Widgets {
     //Paso 2
     
     //Acción
-
     WebElement elmento3 = Utils.chromeDriver.findElement(By.xpath("//*[@id='nav']/li[1]/a"));
     Actions actions5 = new Actions(Utils.chromeDriver);
     actions5.moveToElement(elmento3).perform();
-    // Thread.sleep(5000);
+    Thread.sleep(3000);
 
 
     //Condición
@@ -636,16 +632,15 @@ public class Widgets {
     //Paso 1
     
     //Acción
-
     WebElement Menu = Utils.chromeDriver.findElementByXPath("//li[@id='item-7' and span[@class='text' and text()='Menu']]");
     JavascriptExecutor js = (JavascriptExecutor) Utils.chromeDriver;
     js.executeScript("arguments[0].scrollIntoView(true);", Menu);
     Actions actions = new Actions(Utils.chromeDriver);
     actions.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).perform();
-    // Thread.sleep(5000);
+    Thread.sleep(3000);
 
     Utils.chromeDriver.findElementByXPath("//li[@class='btn btn-light ' and span/text()='Menu']").click();
-    // Thread.sleep(5000);
+    Thread.sleep(3000);
 
     //Condición
     if(Utils.chromeDriver.findElementsByXPath("//h1[text()='Menu']").size() > 0 ||
@@ -658,11 +653,10 @@ public class Widgets {
     //Paso 2
     
     //Acción
-
     WebElement elmento3 = Utils.chromeDriver.findElement(By.xpath("//*[@id='nav']/li[3]"));
     Actions actions5 = new Actions(Utils.chromeDriver);
     actions5.moveToElement(elmento3).perform();
-    // Thread.sleep(5000);
+    Thread.sleep(3000);
 
     //Condición
     if(Utils.chromeDriver.findElementsByXPath("//*[@id='nav']/li[3]").size() > 0)
@@ -687,16 +681,15 @@ public class Widgets {
     //Paso 1
     
     //Acción
-
     WebElement SelectMenu = Utils.chromeDriver.findElementByXPath("//li[@class='btn btn-light ' and span/text()='Select Menu']");
     JavascriptExecutor js = (JavascriptExecutor) Utils.chromeDriver;
     js.executeScript("arguments[0].scrollIntoView(true);", SelectMenu);
     Actions actions = new Actions(Utils.chromeDriver);
     actions.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).perform();
-    // Thread.sleep(5000);
+    Thread.sleep(3000);
 
     Utils.chromeDriver.findElementByXPath("//li[@class='btn btn-light ' and span/text()='Select Menu']").click();
-    // Thread.sleep(5000);
+    Thread.sleep(3000);
 
     //Condición
     if(Utils.chromeDriver.findElementsByXPath("//*[@id='selectMenuContainer']/h1").size() > 0 ||
@@ -714,7 +707,7 @@ public class Widgets {
     
     //Acción
     Utils.chromeDriver.findElementByXPath("//*[@id='withOptGroup']/div/div[1]").click();
-    // Thread.sleep(5000);
+    Thread.sleep(3000);
 
     //Condición
     if(Utils.chromeDriver.findElementsByXPath("//*[@id='oldSelectMenu']").size() > 0)
@@ -739,16 +732,15 @@ public class Widgets {
     //Paso 1
     
     //Acción
-
     WebElement SelectMenu = Utils.chromeDriver.findElementByXPath("//li[@class='btn btn-light ' and span/text()='Select Menu']");
     JavascriptExecutor js = (JavascriptExecutor) Utils.chromeDriver;
     js.executeScript("arguments[0].scrollIntoView(true);", SelectMenu);
     Actions actions = new Actions(Utils.chromeDriver);
     actions.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).perform();
-    // Thread.sleep(5000);
+    Thread.sleep(3000);
 
     Utils.chromeDriver.findElementByXPath("//li[@class='btn btn-light ' and span/text()='Select Menu']").click();
-    // Thread.sleep(5000);
+    Thread.sleep(3000);
 
     //Condición
     if(Utils.chromeDriver.findElementsByXPath("//*[@id='selectMenuContainer']/h1").size() > 0 ||
@@ -766,7 +758,7 @@ public class Widgets {
     
     //Acción
     Utils.chromeDriver.findElementByXPath("//*[@id='selectOne']/div/div[1]").click();
-    // Thread.sleep(5000);
+    Thread.sleep(3000);
 
     //Condición
     if(Utils.chromeDriver.findElementsByXPath("//*[@id='oldSelectMenu']").size() > 0)
@@ -791,16 +783,15 @@ public class Widgets {
     //Paso 1
     
     //Acción
-
     WebElement SelectMenu = Utils.chromeDriver.findElementByXPath("//li[@class='btn btn-light ' and span/text()='Select Menu']");
     JavascriptExecutor js = (JavascriptExecutor) Utils.chromeDriver;
     js.executeScript("arguments[0].scrollIntoView(true);", SelectMenu);
     Actions actions = new Actions(Utils.chromeDriver);
     actions.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).perform();
-    // Thread.sleep(5000);
+    Thread.sleep(3000);
 
     Utils.chromeDriver.findElementByXPath("//li[@class='btn btn-light ' and span/text()='Select Menu']").click();
-    // Thread.sleep(5000);
+    Thread.sleep(3000);
 
     //Condición
     if(Utils.chromeDriver.findElementsByXPath("//*[@id='selectMenuContainer']/h1").size() > 0 ||
@@ -818,7 +809,7 @@ public class Widgets {
     
     //Acción
     Utils.chromeDriver.findElementByXPath("//*[@id='oldSelectMenu']").click();
-    // Thread.sleep(5000);
+    Thread.sleep(3000);
 
     //Condición
     if(Utils.chromeDriver.findElementsByXPath("//*[@id='oldSelectMenu']").size() > 0)
